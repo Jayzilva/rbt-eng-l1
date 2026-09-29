@@ -28,7 +28,9 @@ https://raw.githubusercontent.com/Jayzilva/rbt-eng-l1/main/m01-code-quality-test
 
 If a link fails to import, upload the same files from `docs/syllabus/` instead.
 
-### Sources: official references (website links)
+### Sources: supporting references (website links)
+
+These confirm facts; the syllabus drives the content (see the source-roles paragraph in each prompt).
 
 ```
 https://martinfowler.com/bliki/TestPyramid.html
@@ -40,7 +42,10 @@ https://martinfowler.com/bliki/TestDrivenDevelopment.html
 https://docs.cypress.io/app/core-concepts/best-practices
 ```
 
-### Sources: videos (YouTube links; NotebookLM reads their transcripts)
+### Sources: supporting videos (YouTube links; NotebookLM reads their transcripts)
+
+For fact-checking only. For a video you will publish, remove these and keep only the syllabus and
+official docs, so the result is built entirely from your own material.
 
 ```
 https://www.youtube.com/watch?v=Z_U6M1hMC6s
@@ -62,6 +67,13 @@ That's 30 sources, within NotebookLM's per-notebook limit.
 Studio → Video Overview → Customize, then paste:
 
 ```text
+Source roles: the syllabus chapters are the primary source. They define the explanations,
+examples, diagrams and order. The official pages and videos are supporting references only:
+use them to confirm facts and API details, never as the main narrative, and never reuse their
+examples, analogies, diagrams or wording. If a reference disagrees with the syllabus, follow the
+syllabus. When an idea clearly comes from a named reference (for example the testing trophy from
+Kent C. Dodds), credit it in one short phrase.
+
 Audience: a software engineer who has never written automated tests, about to test a React 18 +
 TypeScript component library (Button, Input, Modal, Card, Dropdown, Toggle, Alert, Tabs) with
 Jest, React Testing Library and user-event, and must reach 80% line, branch and function coverage.
@@ -78,13 +90,20 @@ fireEvent, and why every user-event call is awaited.
 Explain each idea with one concrete example from the component library, for example "a disabled
 Button must not call onClick". Show the mental model as a simple diagram where it helps. End each
 section with one common mistake and how to spot it. Finish with a 30-second recap and three
-questions the viewer should be able to answer. Do not invent statistics or product names. Keep a
+questions the viewer should be able to answer. Do not invent statistics or product names. Build every example on this library's components, not on examples from the videos. Keep a
 calm, teacher-like pace.
 ```
 
 ## 3. Video overview 2: writing good tests (chapters 07–12)
 
 ```text
+Source roles: the syllabus chapters are the primary source. They define the explanations,
+examples, diagrams and order. The official pages and videos are supporting references only:
+use them to confirm facts and API details, never as the main narrative, and never reuse their
+examples, analogies, diagrams or wording. If a reference disagrees with the syllabus, follow the
+syllabus. When an idea clearly comes from a named reference (for example the testing trophy from
+Kent C. Dodds), credit it in one short phrase.
+
 Audience: the same engineer, who now understands Jest, React Testing Library and user-event
 basics, and next has to write the real test suite, fix five seeded bugs test-first, and add
 integration and end-to-end tests.
@@ -101,16 +120,26 @@ best practices, avoiding fixed waits, and an automated accessibility check with 
 
 Use one running example: a settings form inside a Modal, with an Input, a Toggle, a Dropdown and
 a Save Button, and a success Alert. End with how the pieces fit together as a test strategy for
-the whole library, and three self-check questions. Do not invent statistics or product names.
+the whole library, and three self-check questions. Do not invent statistics or product names. Build every example on this library's components, not on examples from the videos.
 ```
 
 ## 4. Optional: audio overview
 
-Studio → Audio Overview → Customize: *"Deep dive for a beginner on testing a React component
+Studio → Audio Overview → Customize: *"Use the syllabus chapters as the primary source and the other sources only to confirm facts; do not reuse their examples. Deep dive for a beginner on testing a React component
 library: the testing pyramid, React Testing Library philosophy, TDD with red and green commits,
 and accessibility testing. Use concrete component examples; avoid jargon without explaining it."*
 
-## 5. Before you rely on a generated video
+## 5. Publishing to YouTube
+
+- Make both videos. One video can't cover 12 chapters well. Upload them as **two videos in one
+  module playlist**: `ENG-L1-M01 · Part 1: Testing foundations` and
+  `ENG-L1-M01 · Part 2: Writing good tests`. Keep them **unlisted** while they're study material.
+- To publish them publicly, regenerate each one from a notebook that has **only** the syllabus
+  chapters and official docs as sources, so the video is built from your material. Credit the
+  references in the description.
+- The main public video for the module is the recap video made at the end (`/notebooklm-pack recap`).
+
+## 6. Before you rely on a generated video
 
 Watch it fully. Check that API names match the syllabus: `userEvent.setup()`,
 `setupFilesAfterEnv`, `coverageThreshold`, `getByRole`. If a video states something the

@@ -19,11 +19,18 @@ The mode is the argument (`learn` or `recap`). Ask if it's unclear.
      - 5–8 official or reference pages from the chapters' Go deeper lists
      - the 8–12 best YouTube videos from the chapters (verified links only)
      - a total count, which must stay within the NotebookLM source limit
-   - One **Video Overview** "Customize" prompt per 5–7 chapters. Each prompt states the audience
+   - One **Video Overview** "Customize" prompt per 5–7 chapters. Each prompt **opens with a
+     source-roles paragraph**: the syllabus is the primary source (explanations, examples,
+     diagrams, order); official pages and videos are supporting references used only to confirm
+     facts, never as the narrative, with none of their examples, analogies or wording reused;
+     the syllabus wins on any conflict; named ideas get a one-phrase credit. Then it states the audience
      (my level), the topics in chapter order, one running example from this module, "one common
      mistake per section", a recap and three self-check questions, and "do not invent
      statistics or product names".
-   - An optional Audio Overview prompt.
+   - An optional Audio Overview prompt with the same source-roles paragraph.
+   - Publishing guidance: one video per prompt; upload them as a module playlist (Part 1, Part 2),
+     unlisted by default. To publish publicly, regenerate with only the syllabus and official docs
+     as sources, and credit the references in the description.
    - A check step: API names in the video must match the syllabus, and the syllabus wins on any
      conflict.
 3. Remind me that the raw links work only after the syllabus is pushed to `main`, with file
@@ -35,7 +42,7 @@ The mode is the argument (`learn` or `recap`). Ask if it's unclear.
 2. `docs/media/notebooklm/sources.md`: `docs/PUBLIC.md`, the headline metrics from
    `verify-report.md`, `docs/design-notes.md`, and 3–5 public references.
 3. `docs/media/notebooklm/video-prompt.md`: 5–8 minutes, for engineers learning
-   {{MODULE_TITLE}}. Explain the concepts through what was built, use only numbers from the
+   {{MODULE_TITLE}}. Same source-roles rule: my material leads, references only confirm. Explain the concepts through what was built, use only numbers from the
    sources, don't name internal projects, and end by pointing to the GitHub repo and site.
 4. `docs/media/youtube.md`: title (≤ 70 characters, starting with `{{MODULE_ID}}`), and a
    description linking the module site (`https://jayzilva.github.io/{{TRACK_REPO}}/{{MODULE_DIR}}/`),
