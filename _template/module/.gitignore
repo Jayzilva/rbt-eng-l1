@@ -1,0 +1,17 @@
+# Academy source material is confidential. Never commit it.
+academy/*
+!academy/README.md
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Tooling output
+node_modules/
+coverage/
+dist/
+build/
+.specclaw/worktrees/
+.specclaw/**/.lock
+*.log

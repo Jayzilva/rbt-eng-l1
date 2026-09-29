@@ -1,0 +1,13 @@
+# Confidential academy source (decrypted). Never commit.
+.academy/
+*/academy/*
+!*/academy/README.md
+
+.env
+.env.*
+!.env.example
+node_modules/
+coverage/
+dist/
+.DS_Store
+Thumbs.db

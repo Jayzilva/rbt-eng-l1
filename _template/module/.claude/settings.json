@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "extraKnownMarketplaces": {
+    "jayzilva-specclaw": {
+      "source": { "source": "github", "repo": "Jayzilva/specclaw" }
+    }
+  },
+  "enabledPlugins": {
+    "specclaw@jayzilva-specclaw": true,
+    "specclaw@chan4lk": false
+  }
+}

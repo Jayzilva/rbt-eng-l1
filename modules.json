@@ -1,0 +1,80 @@
+[
+  {
+    "key": "m01",
+    "n": 1,
+    "id": "ENG-L1-M01",
+    "title": "Code Quality & Testing",
+    "dir": "m01-code-quality-testing",
+    "dates": "Wed 30 Sep – Thu 1 Oct 2026",
+    "week": 1,
+    "academySlug": "month-1-code-quality-testing",
+    "gammaSlug": "month-1-code-quality-gamma-script",
+    "summary": "Test an untested React + TypeScript component library with Jest, React Testing Library and Cypress; reach 80% coverage and fix seeded bugs test-first.",
+    "headlineMetric": "80% coverage"
+  },
+  {
+    "key": "m02",
+    "n": 2,
+    "id": "ENG-L1-M02",
+    "title": "API Development",
+    "dir": "m02-api-development",
+    "dates": "Mon 5 – Tue 6 Oct 2026",
+    "week": 2,
+    "academySlug": "month-2-api-development",
+    "gammaSlug": "month-2-api-development-gamma-script",
+    "summary": "Build a REST API on Express and PostgreSQL with JWT auth, Swagger docs and a Postman test collection.",
+    "headlineMetric": "15+ endpoints"
+  },
+  {
+    "key": "m03",
+    "n": 3,
+    "id": "ENG-L1-M03",
+    "title": "Database Design",
+    "dir": "m03-database-design",
+    "dates": "Wed 7 – Thu 8 Oct 2026",
+    "week": 2,
+    "academySlug": "month-3-database-design",
+    "gammaSlug": "month-3-database-design-gamma-script",
+    "summary": "Design a relational schema, write migrations and seed scripts, and measure query optimisation with indexes.",
+    "headlineMetric": "10+ tables"
+  },
+  {
+    "key": "m04",
+    "n": 4,
+    "id": "ENG-L1-M04",
+    "title": "Frontend Architecture",
+    "dir": "m04-frontend-architecture",
+    "dates": "Mon 12 – Tue 13 Oct 2026",
+    "week": 3,
+    "academySlug": "month-4-frontend-architecture",
+    "gammaSlug": "month-4-frontend-architecture-gamma-script",
+    "summary": "Build a React SPA with deliberate state management, WCAG 2.1 AA accessibility and a Storybook component library.",
+    "headlineMetric": "Lighthouse 90+"
+  },
+  {
+    "key": "m05",
+    "n": 5,
+    "id": "ENG-L1-M05",
+    "title": "DevOps & Deployment",
+    "dir": "m05-devops-deployment",
+    "dates": "Mon 19 – Tue 20 Oct 2026",
+    "week": 4,
+    "academySlug": "month-5-devops-deployment",
+    "gammaSlug": "month-5-devops-deployment-gamma-script",
+    "summary": "Containerise a multi-service app, build a CI/CD pipeline and deploy to production with HTTPS and monitoring.",
+    "headlineMetric": "image < 100 MB"
+  },
+  {
+    "key": "m06",
+    "n": 6,
+    "id": "ENG-L1-M06",
+    "title": "System Design (capstone)",
+    "dir": "m06-system-design",
+    "dates": "Fri 30 Oct – Sun 1 Nov 2026",
+    "week": 5,
+    "academySlug": "month-6-system-design",
+    "gammaSlug": "month-6-system-design-gamma-script",
+    "summary": "Capstone: write a system design document with C4 diagrams and prove it with a working microservices proof of concept.",
+    "headlineMetric": "design doc + POC"
+  }
+]

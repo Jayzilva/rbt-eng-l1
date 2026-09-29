@@ -1,0 +1,24 @@
+# Academy source material is confidential. Never commit it.
+academy/*
+!academy/README.md
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Tooling output
+node_modules/
+coverage/
+dist/
+build/
+.specclaw/worktrees/
+.specclaw/**/.lock
+*.log
+
+# specclaw: raw timing ledgers. timeline.md (the render) is committed.
+.specclaw/changes/*/timeline.jsonl
+.specclaw/changes/archive/*/timeline.jsonl
+
+# specclaw: bf-* collector handoff files. Regenerated every run.
+.specclaw/analysis/.collect/
