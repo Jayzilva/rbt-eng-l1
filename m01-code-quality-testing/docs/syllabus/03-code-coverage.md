@@ -1,6 +1,6 @@
 # 03 · Code Coverage
 
-*Level (a) never used · about 10 minutes reading, plus 10 minutes with a real report*
+*Level (a) never used · about 16 minutes reading, plus 10 minutes with a real report*
 
 ## Why this matters here
 
@@ -126,6 +126,126 @@ it('shows no dismiss button when not dismissible', () => {
 
 `queryBy*` returns `null` instead of throwing when nothing matches, so it is the right query for "is not there".
 
+## How the numbers are calculated
+
+Every coverage number is the same fraction:
+
+> **percentage = items that ran ÷ items that exist × 100**
+
+What changes between the four columns is what counts as an "item". Before the tests run,
+Istanbul reads each file and makes a list of every statement, line, function and branch in it,
+each with a counter set to 0. While the tests run, the counters go up. Afterwards, any item
+still at 0 is "uncovered".
+
+### Step 1: count the items in a file
+
+A small made-up component, with line numbers:
+
+```tsx
+1  export function Badge({ count, onClear }: BadgeProps) {
+2    if (count === 0) return null;
+3    const label = count > 99 ? '99+' : String(count);
+4    function handleClick() {
+5      onClear?.();
+6    }
+7    return <button onClick={handleClick}>{label}</button>;
+8  }
+```
+
+| Item type | What counts as one | The items in `Badge` | Total |
+|---|---|---|---|
+| **Statements** | each executable instruction | the `if` (line 2), `return null` (line 2), `const label = …` (3), `onClear?.()` (5), `return <button>` (7) | **5** |
+| **Lines** | each line that holds at least one statement | lines 2, 3, 5, 7 (line 2 holds two statements but is one line) | **4** |
+| **Functions** | each function, including small inner ones | `Badge`, `handleClick` | **2** |
+| **Branches** | each *path* out of a decision; an `if` or a `? :` has 2 paths | line 2: if-true, if-false; line 3: `> 99`, `≤ 99` | **4** |
+
+Lines 1, 4, 6 and 8 are declarations and braces, not executable instructions, so they don't count.
+
+### Step 2: add tests one at a time and recount
+
+✔ = ran at least once, ✘ = never ran.
+
+**Test 1:** `render(<Badge count={5} />)` and expect "5" on screen.
+
+| | Items that ran | Result |
+|---|---|---|
+| Statements | `if` ✔, `return null` ✘, `const label` ✔, `onClear?.()` ✘, `return <button>` ✔ | 3 / 5 = **60%** |
+| Lines | 2 ✔, 3 ✔, 5 ✘, 7 ✔ | 3 / 4 = **75%** |
+| Functions | `Badge` ✔, `handleClick` ✘ | 1 / 2 = **50%** |
+| Branches | if-true ✘, if-false ✔, `> 99` ✘, `≤ 99` ✔ | 2 / 4 = **50%** |
+
+Line 2 counts as covered because *something* on it ran, even though `return null` didn't. That
+is why line coverage can look better than statement or branch coverage.
+
+**Test 2:** `render(<Badge count={0} />)` and expect nothing rendered.
+Adds `return null` and the if-true path. Statements **80%** (4/5), lines **75%** (unchanged: line 2
+was already counted), functions **50%**, branches **75%** (3/4).
+
+**Test 3:** `render(<Badge count={150} />)` and expect "99+".
+Adds the `> 99` path. Branches **100%** (4/4). The other numbers are unchanged.
+
+**Test 4:** click the button and expect `onClear` to have been called.
+Adds `handleClick` and `onClear?.()`. Statements **100%**, lines **100%**, functions **100%**.
+
+The same four tests, as one table:
+
+| After test | Stmts | Lines | Funcs | Branches |
+|---|---|---|---|---|
+| 1 (count 5) | 60% | 75% | 50% | 50% |
+| 2 (+ count 0) | 80% | 75% | 50% | 75% |
+| 3 (+ count 150) | 80% | 75% | 50% | 100% |
+| 4 (+ click) | 100% | 100% | 100% | 100% |
+
+Each test raised a *different* column. That is the point of looking at all four: each one
+catches a different kind of untested behaviour.
+
+### What else counts as a branch
+
+- `if` / `else`, `? :` and each `case` in a `switch`: one branch per path.
+- `a && b` and `a || b`: each side is a branch, so a test where `a` is always true never
+  covers the short-circuit path.
+- `a ?? b` and default parameters (`variant = 'primary'`): the "value given" and "fallback used"
+  cases are separate branches.
+- `?.` (optional chaining, as in `onClear?.()`) may or may not show up as a branch, depending
+  on how TypeScript compiles it. With `ts-jest`, check the report rather than assuming.
+
+### Step 3: how the "All files" (global) number combines files
+
+The global number is **not the average of the file percentages**. Istanbul adds up the raw
+counts across all files first, then divides:
+
+> **global % = (sum of covered items in all files) ÷ (sum of all items in all files) × 100**
+
+So bigger files weigh more. For example, for branches:
+
+| File | Covered branches | Total branches | File % |
+|---|---|---|---|
+| `Tabs.tsx` (large) | 90 | 100 | 90% |
+| `Card.tsx` (small) | 2 | 10 | 20% |
+| **All files** | 92 | 110 | **83.6%** |
+
+The simple average of 90% and 20% would be 55%, but the global figure is 83.6%, because
+`Tabs` has ten times as many branches. With a global-only threshold of 80%, this passes even
+though `Card` is barely tested.
+
+That is what the **per-file floor** in this module's gate is for (design decision D6): with
+`'./src/components/**/*.tsx': { branches: 70 }`, `Card.tsx` at 20% fails the run and names the
+file, even while the global number is green.
+
+### Reading it in the terminal
+
+```text
+File         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
+-------------|---------|----------|---------|---------|------------------
+All files    |   83.6  |   83.6   |   ...   |   ...   |
+ Card.tsx    |   40    |   20     |   50    |   40    | 12-18,24
+ Tabs.tsx    |   91    |   90     |   100   |   92    | 57
+```
+
+"Uncovered Line #s" lists the lines with statements that never ran. Open
+`coverage/lcov-report/index.html` and click a file to see them highlighted: red for code that
+never ran, and yellow markers (such as `I` or `E` next to an `if`) for branches never taken.
+
 ## Worked example
 
 Take `Alert`, with props `variant`, `dismissible?`, `onDismiss?` and `autoDismissMs?`. Suppose it looks roughly like this (a simplified sketch, not the real starter code; it assumes `AlertProps` also includes `children` for the message):
@@ -211,9 +331,9 @@ Without it, Jest only measures files that some test imports. A component with no
 </details>
 
 <details markdown="1">
-<summary><strong>Q5. Tabs has 100% coverage. Can it still have an off-by-one bug?</strong></summary>
+<summary><strong>Q5. A <code>Pagination</code> helper has 100% coverage. Can it still have an off-by-one bug?</strong></summary>
 
-Yes. Every line can run with the wrong index and still produce output. Coverage does not know what the correct output is. Only an assertion that checks the right tab is selected, including the first and last one, catches it.
+Yes. Every line can run with the wrong index and still produce output. Coverage does not know what the correct output is. Only an assertion that checks the right page is shown, including the first and last one, catches it.
 
 </details>
 

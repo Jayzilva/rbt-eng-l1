@@ -48,7 +48,7 @@ flowchart LR
 |---|---|---|---|
 | 01 | [Testing pyramid and testing trophy](01-testing-pyramid.md) | ~20 min | Parts 2 and 4: which level each test belongs at |
 | 02 | [Jest basics](02-jest-basics.md) | ~25 min | Part 1: config; every test after |
-| 03 | [Code coverage](03-code-coverage.md) | ~20 min | Part 1 thresholds; Part 5 report |
+| 03 | [Code coverage](03-code-coverage.md) | ~26 min | Part 1 thresholds; Part 5 report |
 | 04 | [Typing React props under strict mode](04-typescript-props.md) | ~6 min | Reading the components before testing them |
 | 05 | [React Testing Library](05-react-testing-library.md) | ~30 min | Part 2: rendering and querying |
 | 06 | [user-event](06-user-event.md) | ~30 min | Part 2: every interaction test |
