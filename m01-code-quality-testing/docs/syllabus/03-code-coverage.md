@@ -182,20 +182,40 @@ Use coverage as a flashlight for finding untested behaviour, then judge each tes
 
 ## Check yourself
 
-??? question "Q1. A file shows 100% lines and 50% branches. What does that tell you, and where do you look?"
-    Every line ran, but only half of the decision paths were taken. Usually the tests exercise one side of each `if`, `&&`, `? :` or default value. Open the file in the HTML report and look for yellow highlights and `I`/`E` markers.
+<details markdown="1">
+<summary><strong>Q1. A file shows 100% lines and 50% branches. What does that tell you, and where do you look?</strong></summary>
 
-??? question "Q2. Predict: a test renders `<Button onClick={fn}>Save</Button>`, clicks it, and has no `expect`. Which metrics go up, and is the click handler tested?"
-    Statements, lines and functions go up, because the handler ran. It is not tested: nothing checks that `fn` was called, so the test would still pass if the handler did nothing.
+Every line ran, but only half of the decision paths were taken. Usually the tests exercise one side of each `if`, `&&`, `? :` or default value. Open the file in the HTML report and look for yellow highlights and `I`/`E` markers.
 
-??? question "Q3. All tests pass, but `npm run test:coverage` exits with code 1. What happened?"
-    A metric fell below `coverageThreshold`. Jest prints which one, for example `coverage threshold for branches (80%) not met`. The build fails on purpose, even though no test failed.
+</details>
 
-??? question "Q4. Why is `collectCoverageFrom` needed to make the 80% target honest?"
-    Without it, Jest only measures files that some test imports. A component with no test file does not appear at all, so it cannot drag the total down. `collectCoverageFrom` makes every component count, tested or not.
+<details markdown="1">
+<summary><strong>Q2. Predict: a test renders <code>&lt;Button onClick={fn}&gt;Save&lt;/Button&gt;</code>, clicks it, and has no <code>expect</code>. Which metrics go up, and is the click handler tested?</strong></summary>
 
-??? question "Q5. Tabs has 100% coverage. Can it still have an off-by-one bug?"
-    Yes. Every line can run with the wrong index and still produce output. Coverage does not know what the correct output is. Only an assertion that checks the right tab is selected, including the first and last one, catches it.
+Statements, lines and functions go up, because the handler ran. It is not tested: nothing checks that `fn` was called, so the test would still pass if the handler did nothing.
+
+</details>
+
+<details markdown="1">
+<summary><strong>Q3. All tests pass, but <code>npm run test:coverage</code> exits with code 1. What happened?</strong></summary>
+
+A metric fell below `coverageThreshold`. Jest prints which one, for example `coverage threshold for branches (80%) not met`. The build fails on purpose, even though no test failed.
+
+</details>
+
+<details markdown="1">
+<summary><strong>Q4. Why is <code>collectCoverageFrom</code> needed to make the 80% target honest?</strong></summary>
+
+Without it, Jest only measures files that some test imports. A component with no test file does not appear at all, so it cannot drag the total down. `collectCoverageFrom` makes every component count, tested or not.
+
+</details>
+
+<details markdown="1">
+<summary><strong>Q5. Tabs has 100% coverage. Can it still have an off-by-one bug?</strong></summary>
+
+Yes. Every line can run with the wrong index and still produce output. Coverage does not know what the correct output is. Only an assertion that checks the right tab is selected, including the first and last one, catches it.
+
+</details>
 
 ## Go deeper
 

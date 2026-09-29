@@ -255,20 +255,40 @@ This is the kind of test that catches a "state not updating" bug. Part 3 has a s
 
 ## Check yourself
 
-??? question "Q1. A test finds the active tab with `container.querySelector('.active')`. You change the styling approach and the test fails, but the tabs still work in the browser. What kind of failure is this, and how do you rewrite the assertion?"
-    It is a false negative: the test failed although the behaviour is fine, because it checked an implementation detail (a CSS class). Rewrite it to `expect(screen.getByRole('tab', { name: 'Billing' })).toHaveAttribute('aria-selected', 'true')`.
+<details markdown="1">
+<summary><strong>Q1. A test finds the active tab with <code>container.querySelector('.active')</code>. You change the styling approach and the test fails, but the tabs still work in the browser. What kind of failure is this, and how do you rewrite the assertion?</strong></summary>
 
-??? question "Q2. Is `expect(onDismiss).toHaveBeenCalledTimes(1)` testing an implementation detail?"
-    No. `onDismiss` is a prop, part of Alert's public contract with the developer who uses it. The parent component can observe that call, so it is behaviour. Testing a *private* function inside Alert would be an implementation detail.
+It is a false negative: the test failed although the behaviour is fine, because it checked an implementation detail (a CSS class). Rewrite it to `expect(screen.getByRole('tab', { name: 'Billing' })).toHaveAttribute('aria-selected', 'true')`.
 
-??? question "Q3. You have one test that opens the Modal, checks its title, presses Escape and checks that onClose was called. Should you split it? Into what?"
-    Yes. It checks two behaviours. Split it into "renders the title in a dialog when isOpen is true" and "calls onClose when the user presses Escape". Each then fails for exactly one reason.
+</details>
 
-??? question "Q4. Write a test name for this behaviour: the Dropdown shows the label of the currently selected option."
-    For example: `describe('Dropdown')` > `describe('rendering')` > `it('shows the label of the selected option')`. Read aloud: "Dropdown rendering shows the label of the selected option."
+<details markdown="1">
+<summary><strong>Q2. Is <code>expect(onDismiss).toHaveBeenCalledTimes(1)</code> testing an implementation detail?</strong></summary>
 
-??? question "Q5. Why is a large snapshot a weak test even though it catches every change?"
-    Because it does not say which change matters. Every harmless markup change also fails it, so people update it without reading it, and it stops protecting anything. An explicit assertion states the one behaviour that must hold.
+No. `onDismiss` is a prop, part of Alert's public contract with the developer who uses it. The parent component can observe that call, so it is behaviour. Testing a *private* function inside Alert would be an implementation detail.
+
+</details>
+
+<details markdown="1">
+<summary><strong>Q3. You have one test that opens the Modal, checks its title, presses Escape and checks that onClose was called. Should you split it? Into what?</strong></summary>
+
+Yes. It checks two behaviours. Split it into "renders the title in a dialog when isOpen is true" and "calls onClose when the user presses Escape". Each then fails for exactly one reason.
+
+</details>
+
+<details markdown="1">
+<summary><strong>Q4. Write a test name for this behaviour: the Dropdown shows the label of the currently selected option.</strong></summary>
+
+For example: `describe('Dropdown')` > `describe('rendering')` > `it('shows the label of the selected option')`. Read aloud: "Dropdown rendering shows the label of the selected option."
+
+</details>
+
+<details markdown="1">
+<summary><strong>Q5. Why is a large snapshot a weak test even though it catches every change?</strong></summary>
+
+Because it does not say which change matters. Every harmless markup change also fails it, so people update it without reading it, and it stops protecting anything. An explicit assertion states the one behaviour that must hold.
+
+</details>
 
 ## Go deeper
 

@@ -14,7 +14,7 @@ The mode is the argument (`learn` or `recap`). Ask if it's unclear.
 2. Write `docs/media/notebooklm/learn-pack.md`:
    - Notebook name.
    - **Sources**, as copy-paste blocks:
-     - raw GitHub URLs for `docs/syllabus/index.md` and every chapter
+     - raw GitHub URLs for `docs/syllabus/README.md` and every chapter
        (`https://raw.githubusercontent.com/Jayzilva/rbt-eng-l1/main/m01-code-quality-testing/docs/syllabus/<file>`)
      - 5–8 official or reference pages from the chapters' Go deeper lists
      - the 8–12 best YouTube videos from the chapters (verified links only)

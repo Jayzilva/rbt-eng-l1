@@ -283,20 +283,40 @@ The last assertion catches a subtle bug. If a manual dismiss doesn't clear the a
 
 ## Check yourself
 
-??? question "Q1. With fake timers on, an Alert has `autoDismissMs={3000}`. You advance 2000 ms, then 2000 ms again. How many times is `onDismiss` called, and when?"
-    Once, during the second advance. The clock passes 3000 ms partway through it. A single `setTimeout` fires only once, however far past its time you advance.
+<details markdown="1">
+<summary><strong>Q1. With fake timers on, an Alert has <code>autoDismissMs={3000}</code>. You advance 2000 ms, then 2000 ms again. How many times is <code>onDismiss</code> called, and when?</strong></summary>
 
-??? question "Q2. You see 'An update to Tabs inside a test was not wrapped in act(...)'. What does it tell you, and what is your first move?"
-    React updated state after your test stopped watching. Look for an un-awaited promise, a user-event call missing `await`, or a timer you advanced outside `act`. Then `await` the right thing, rather than wrapping random lines in `act`.
+Once, during the second advance. The clock passes 3000 ms partway through it. A single `setTimeout` fires only once, however far past its time you advance.
 
-??? question "Q3. You want to check an Alert is gone after an async save resolves. `findBy`, `waitFor` or `waitForElementToBeRemoved`?"
-    `waitForElementToBeRemoved(() => screen.queryByRole('alert'))`, or `await waitFor(() => expect(screen.queryByRole('alert')).not.toBeInTheDocument())`. `findBy` waits for elements to *appear*, so it can't be used here.
+</details>
 
-??? question "Q4. Why test at 4999 ms and at 5000 ms instead of just `runAllTimers()`?"
-    `runAllTimers` proves the Alert dismisses *eventually*. The pair proves it dismisses at the *right* time. That catches unit mistakes (seconds vs milliseconds) and off-by-one delays.
+<details markdown="1">
+<summary><strong>Q2. You see 'An update to Tabs inside a test was not wrapped in act(...)'. What does it tell you, and what is your first move?</strong></summary>
 
-??? question "Q5. Why does the unmount test matter, if no user can see the Alert after it is removed?"
-    A timer that outlives its component still runs `onDismiss`, which can change parent state for an alert that is already gone. React may also warn about updates after unmount. The test proves the effect cleans up with `clearTimeout`.
+React updated state after your test stopped watching. Look for an un-awaited promise, a user-event call missing `await`, or a timer you advanced outside `act`. Then `await` the right thing, rather than wrapping random lines in `act`.
+
+</details>
+
+<details markdown="1">
+<summary><strong>Q3. You want to check an Alert is gone after an async save resolves. <code>findBy</code>, <code>waitFor</code> or <code>waitForElementToBeRemoved</code>?</strong></summary>
+
+`waitForElementToBeRemoved(() => screen.queryByRole('alert'))`, or `await waitFor(() => expect(screen.queryByRole('alert')).not.toBeInTheDocument())`. `findBy` waits for elements to *appear*, so it can't be used here.
+
+</details>
+
+<details markdown="1">
+<summary><strong>Q4. Why test at 4999 ms and at 5000 ms instead of just <code>runAllTimers()</code>?</strong></summary>
+
+`runAllTimers` proves the Alert dismisses *eventually*. The pair proves it dismisses at the *right* time. That catches unit mistakes (seconds vs milliseconds) and off-by-one delays.
+
+</details>
+
+<details markdown="1">
+<summary><strong>Q5. Why does the unmount test matter, if no user can see the Alert after it is removed?</strong></summary>
+
+A timer that outlives its component still runs `onDismiss`, which can change parent state for an alert that is already gone. React may also warn about updates after unmount. The test proves the effect cleans up with `clearTimeout`.
+
+</details>
 
 ## Go deeper
 

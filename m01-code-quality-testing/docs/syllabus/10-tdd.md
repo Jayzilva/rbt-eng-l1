@@ -249,20 +249,40 @@ If the pagination lives inside a component rather than a helper, write the red t
 
 ## Check yourself
 
-??? question "Q1. You write a red test for 'Input shows its error message' and it fails with `TestingLibraryElementError: Unable to find a label with the text of: Email`. Can you commit this as your red commit?"
-    No. The failure is about your query (the label text or the query itself), not about the missing error message. Fix the test until it finds the input and fails only on the assertion that the error message is shown.
+<details markdown="1">
+<summary><strong>Q1. You write a red test for 'Input shows its error message' and it fails with <code>TestingLibraryElementError: Unable to find a label with the text of: Email</code>. Can you commit this as your red commit?</strong></summary>
 
-??? question "Q2. Put these in the right order: fix(m01) … (green); refactor(m01) …; test(m01) … (red)."
-    `test(m01): … (red)`, then `fix(m01): … (green)`, then optionally `refactor(m01): …`.
+No. The failure is about your query (the label text or the query itself), not about the missing error message. Fix the test until it finds the input and fails only on the assertion that the error message is shown.
 
-??? question "Q3. For `getPageCount(total, pageSize)`, which three inputs would you test first, and why?"
-    An exact fit (20 items, size 10, expect 2), a remainder (21, 10, expect 3) and empty (0, 10, expect 0). Off-by-one bugs live at boundaries, and these are the three boundaries of a division that rounds up.
+</details>
 
-??? question "Q4. A new test passes on first run. Is that a problem?"
-    For a bug fix, yes: it means the test does not reproduce the bug (or the bug was already fixed). Check the test targets the real symptom. For extra coverage of already-correct behaviour it is fine, but do not label it as a red commit.
+<details markdown="1">
+<summary><strong>Q2. Put these in the right order: fix(m01) … (green); refactor(m01) …; test(m01) … (red).</strong></summary>
 
-??? question "Q5. Why does the red test stay in the suite after the fix?"
-    It becomes a regression test. If anyone later reintroduces the bug, that test fails and names the exact behaviour that broke.
+`test(m01): … (red)`, then `fix(m01): … (green)`, then optionally `refactor(m01): …`.
+
+</details>
+
+<details markdown="1">
+<summary><strong>Q3. For <code>getPageCount(total, pageSize)</code>, which three inputs would you test first, and why?</strong></summary>
+
+An exact fit (20 items, size 10, expect 2), a remainder (21, 10, expect 3) and empty (0, 10, expect 0). Off-by-one bugs live at boundaries, and these are the three boundaries of a division that rounds up.
+
+</details>
+
+<details markdown="1">
+<summary><strong>Q4. A new test passes on first run. Is that a problem?</strong></summary>
+
+For a bug fix, yes: it means the test does not reproduce the bug (or the bug was already fixed). Check the test targets the real symptom. For extra coverage of already-correct behaviour it is fine, but do not label it as a red commit.
+
+</details>
+
+<details markdown="1">
+<summary><strong>Q5. Why does the red test stay in the suite after the fix?</strong></summary>
+
+It becomes a regression test. If anyone later reintroduces the bug, that test fails and names the exact behaviour that broke.
+
+</details>
 
 ## Go deeper
 

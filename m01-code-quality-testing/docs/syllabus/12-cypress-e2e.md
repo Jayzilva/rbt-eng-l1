@@ -215,20 +215,40 @@ This single test is your Part 4 E2E. Keep it to one flow; the detail belongs in 
 
 ## Check yourself
 
-??? question "Q1. Name two bugs Cypress can catch that a Jest + jsdom test of the same component would miss."
-    Examples: a button covered by an overlay so a real click cannot reach it; an element present in the DOM but hidden by CSS or off screen; low colour contrast (via cypress-axe); a focus problem caused by real browser behaviour.
+<details markdown="1">
+<summary><strong>Q1. Name two bugs Cypress can catch that a Jest + jsdom test of the same component would miss.</strong></summary>
 
-??? question "Q2. Your Alert auto-dismisses after 5 seconds. How do you assert it disappears, without cy.wait?"
-    `cy.get('[role="alert"]', { timeout: 7000 }).should('not.exist')`. Cypress retries until the alert is gone or 7 seconds pass.
+Examples: a button covered by an overlay so a real click cannot reach it; an element present in the DOM but hidden by CSS or off screen; low colour contrast (via cypress-axe); a focus problem caused by real browser behaviour.
 
-??? question "Q3. Rank these selectors from best to worst: `.modal__footer > button:nth-child(2)`, `cy.contains('button', 'Save')`, `[data-cy=save]`."
-    `cy.contains('button', 'Save')` (what the user sees), then `[data-cy=save]` (stable, but invisible to users), then the class and `nth-child` chain (breaks on any restyle).
+</details>
 
-??? question "Q4. What does `const btn = cy.get('button')` give you, and why is that a problem?"
-    A Cypress chainable, not a DOM element. Cypress commands are queued and run later, so you must chain (`cy.get('button').click()`) or use `.then(($btn) => ...)` to reach the element.
+<details markdown="1">
+<summary><strong>Q2. Your Alert auto-dismisses after 5 seconds. How do you assert it disappears, without cy.wait?</strong></summary>
 
-??? question "Q5. Which command runs Cypress in CI, and why do you need start-server-and-test or similar?"
-    `cypress run`, which is headless by default. Cypress needs the demo page served at `baseUrl` before it starts, so something must start the server, wait until it responds, run the tests, and shut it down.
+`cy.get('[role="alert"]', { timeout: 7000 }).should('not.exist')`. Cypress retries until the alert is gone or 7 seconds pass.
+
+</details>
+
+<details markdown="1">
+<summary><strong>Q3. Rank these selectors from best to worst: <code>.modal__footer &gt; button:nth-child(2)</code>, <code>cy.contains('button', 'Save')</code>, <code>[data-cy=save]</code>.</strong></summary>
+
+`cy.contains('button', 'Save')` (what the user sees), then `[data-cy=save]` (stable, but invisible to users), then the class and `nth-child` chain (breaks on any restyle).
+
+</details>
+
+<details markdown="1">
+<summary><strong>Q4. What does <code>const btn = cy.get('button')</code> give you, and why is that a problem?</strong></summary>
+
+A Cypress chainable, not a DOM element. Cypress commands are queued and run later, so you must chain (`cy.get('button').click()`) or use `.then(($btn) => ...)` to reach the element.
+
+</details>
+
+<details markdown="1">
+<summary><strong>Q5. Which command runs Cypress in CI, and why do you need start-server-and-test or similar?</strong></summary>
+
+`cypress run`, which is headless by default. Cypress needs the demo page served at `baseUrl` before it starts, so something must start the server, wait until it responds, run the tests, and shut it down.
+
+</details>
 
 ## Go deeper
 

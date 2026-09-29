@@ -30,10 +30,10 @@ This skill covers the first two steps.
    a glossary line for (c), nothing for (d). Give estimated reading plus exercise time. Ask
    once for changes to the scope, then generate.
 2. Generate `docs/syllabus/` following the specclaw recipe (`references/syllabus.md` in the
-   specclaw plugin): `index.md` (scope, level map, how-to-use flow diagram, chapter table,
+   specclaw plugin): `README.md` (GitHub shows it on the folder page; scope, level map, how-to-use flow diagram, chapter table,
    assumptions) and `NN-<concept>.md` chapters. Each chapter has, in order: Why this matters
    here, Mental model, Diagram (Mermaid), Core primitives (code in this module's stack),
-   Worked example, Common mistakes, Check yourself (answers in `??? question` blocks),
+   Worked example, Common mistakes, Check yourself (answers in `<details markdown="1"><summary>…</summary>` blocks (they render on GitHub and in MkDocs)),
    Go deeper, Used in. Footer: `*Resources verified <date>.*`
 3. **Resources are verified in this session, never recalled.** Fetch every article and doc
    (HTTP 200, topic matches, real title). Look up every YouTube video through
@@ -41,7 +41,9 @@ This skill covers the first two steps.
    copy the returned title and channel. Prefer official channels and known educators. For 8 or
    more chapters, parallel writer agents are fine, but they must receive the verified list and
    add nothing to it.
-4. Add every chapter to the `Syllabus` section of `mkdocs.yml` `nav`.
+4. Add every chapter to the `Syllabus` section of `mkdocs.yml` `nav` (overview: `syllabus/README.md`).
+   Use only Markdown that GitHub renders too: Mermaid fences, tables, `<details>`; no `???`/`!!!`
+   admonitions. The syllabus must be fully readable on github.com without the site.
 5. Check: `node tools/check-public.mjs docs/syllabus/*.md` exits 0, and
    `python -m mkdocs build --strict` passes (if mkdocs is installed).
 
@@ -52,7 +54,7 @@ the best 8–12 videos), plus one Video Overview prompt per 5–7 chapters.
 
 ## 4. Hand-off
 
-Tell me: the site page (`https://jayzilva.github.io/{{TRACK_REPO}}/{{MODULE_DIR}}/syllabus/`,
-live after push), the learn-pack path, and the study order (chapter → its videos → NotebookLM
+Tell me: the GitHub folder link (`https://github.com/Jayzilva/{{TRACK_REPO}}/tree/main/{{MODULE_DIR}}/docs/syllabus`),
+the site page when Pages is live, the learn-pack path, and the study order (chapter → its videos → NotebookLM
 video → Check yourself). Update the module status to `Studying` in `README.md`, `docs/index.md`
 and the track README. The next action after I finish studying is `/design-session`.

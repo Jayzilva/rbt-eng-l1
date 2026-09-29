@@ -257,17 +257,33 @@ describe('Toggle', () => {
 
 ## Check yourself
 
-??? question "Q1. A Button has `pointer-events: none` while loading. What does `fireEvent.click` do? What does `user.click` do?"
-    `fireEvent.click` dispatches the click and `onClick` runs, so the test says clicks work when users can't click. `user.click` sees `pointer-events: none` and throws an error explaining the element can't be clicked.
+<details markdown="1">
+<summary><strong>Q1. A Button has <code>pointer-events: none</code> while loading. What does <code>fireEvent.click</code> do? What does <code>user.click</code> do?</strong></summary>
 
-??? question "Q2. Predict the result: `render(<Toggle label='Wifi' checked={false} onChange={fn} />)`, then `await user.click(switch)`, then `expect(switch).toBeChecked()`."
-    It fails. The toggle is controlled and the `checked` prop is still `false`. `fn` was called with `true`, but nothing re-rendered the component with the new value. Assert on `fn`, or use a stateful parent.
+`fireEvent.click` dispatches the click and `onClick` runs, so the test says clicks work when users can't click. `user.click` sees `pointer-events: none` and throws an error explaining the element can't be clicked.
 
-??? question "Q3. Why does `user.type` catch a missing `onChange` wire-up that setting `input.value` directly would miss?"
-    `user.type` fires real key and `input` events one character at a time, and React's `onChange` listens to those. Setting `.value` directly fires no events, so React never runs the handler, and your test ends up checking a value React never saw.
+</details>
 
-??? question "Q4. Which Tabs behaviour would you test with `user.keyboard('{ArrowRight}')`, and what would you assert?"
-    The WAI-ARIA Tabs pattern: with focus on a tab, ArrowRight moves focus to the next tab. Assert that the next tab `toHaveFocus()`. If the component activates tabs as focus moves, also assert it has `aria-selected="true"` and its panel is shown.
+<details markdown="1">
+<summary><strong>Q2. Predict the result: <code>render(&lt;Toggle label='Wifi' checked={false} onChange={fn} /&gt;)</code>, then <code>await user.click(switch)</code>, then <code>expect(switch).toBeChecked()</code>.</strong></summary>
+
+It fails. The toggle is controlled and the `checked` prop is still `false`. `fn` was called with `true`, but nothing re-rendered the component with the new value. Assert on `fn`, or use a stateful parent.
+
+</details>
+
+<details markdown="1">
+<summary><strong>Q3. Why does <code>user.type</code> catch a missing <code>onChange</code> wire-up that setting <code>input.value</code> directly would miss?</strong></summary>
+
+`user.type` fires real key and `input` events one character at a time, and React's `onChange` listens to those. Setting `.value` directly fires no events, so React never runs the handler, and your test ends up checking a value React never saw.
+
+</details>
+
+<details markdown="1">
+<summary><strong>Q4. Which Tabs behaviour would you test with <code>user.keyboard('{ArrowRight}')</code>, and what would you assert?</strong></summary>
+
+The WAI-ARIA Tabs pattern: with focus on a tab, ArrowRight moves focus to the next tab. Assert that the next tab `toHaveFocus()`. If the component activates tabs as focus moves, also assert it has `aria-selected="true"` and its panel is shown.
+
+</details>
 
 ## Go deeper
 

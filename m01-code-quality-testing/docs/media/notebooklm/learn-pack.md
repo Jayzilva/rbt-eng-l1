@@ -11,7 +11,7 @@ Name it `ENG-L1-M01 · Testing a React component library`.
 ### Sources: syllabus chapters (add as website links)
 
 ```
-https://raw.githubusercontent.com/Jayzilva/rbt-eng-l1/main/m01-code-quality-testing/docs/syllabus/index.md
+https://raw.githubusercontent.com/Jayzilva/rbt-eng-l1/main/m01-code-quality-testing/docs/syllabus/README.md
 https://raw.githubusercontent.com/Jayzilva/rbt-eng-l1/main/m01-code-quality-testing/docs/syllabus/01-testing-pyramid.md
 https://raw.githubusercontent.com/Jayzilva/rbt-eng-l1/main/m01-code-quality-testing/docs/syllabus/02-jest-basics.md
 https://raw.githubusercontent.com/Jayzilva/rbt-eng-l1/main/m01-code-quality-testing/docs/syllabus/03-code-coverage.md

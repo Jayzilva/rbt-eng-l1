@@ -47,7 +47,7 @@ markdown_extensions:
 nav:
   - Overview: index.md
   - Syllabus:
-      - Overview: syllabus/index.md
+      - Overview: syllabus/README.md
       - "01 · Testing Pyramid and Testing Trophy": syllabus/01-testing-pyramid.md
       - "02 · Jest Basics": syllabus/02-jest-basics.md
       - "03 · Code Coverage": syllabus/03-code-coverage.md

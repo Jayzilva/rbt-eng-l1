@@ -176,17 +176,33 @@ The result: four fast jsdom tests, one browser test, and one check you get for f
 
 ## Check yourself
 
-??? question "Q1. Suppose selecting an option in Dropdown does not call `onChange`. Which level of test should you write first, and why?"
-    A unit test. The bug lives inside one component, so a Jest + RTL test that renders `Dropdown` with a `jest.fn()` as `onChange`, selects an option and asserts the mock was called will fail fast and point straight at the cause. An E2E test would also catch it, but it is slower and tells you less about where the fault is.
+<details markdown="1">
+<summary><strong>Q1. Suppose selecting an option in Dropdown does not call <code>onChange</code>. Which level of test should you write first, and why?</strong></summary>
 
-??? question "Q2. What does the testing trophy add that the pyramid does not have, and why does it make integration the widest layer?"
-    It adds static analysis (TypeScript, linting) as the base. It makes integration widest because in front-end code many bugs come from components interacting, and React Testing Library makes integration tests almost as cheap as unit tests, so you get more confidence for about the same cost.
+A unit test. The bug lives inside one component, so a Jest + RTL test that renders `Dropdown` with a `jest.fn()` as `onChange`, selects an option and asserts the mock was called will fail fast and point straight at the cause. An E2E test would also catch it, but it is slower and tells you less about where the fault is.
 
-??? question "Q3. Predict: you replace `Input` with a mock inside a Modal form test, and the real `Input` has a bug where it never calls `onChange`. Does the test catch it?"
-    No. The mock stands in for the real `Input`, so the bug is never run. This is why integration tests should use real child components.
+</details>
 
-??? question "Q4. Why does the Part 4 accessibility check belong in Cypress rather than only in Jest?"
-    jsdom does not do real layout, styling or browser focus behaviour. A scan in a real browser, with the whole page assembled, sees what a real user and assistive technology would see. Jest tests can still check roles and labels. The E2E scan is the final check on the assembled page.
+<details markdown="1">
+<summary><strong>Q2. What does the testing trophy add that the pyramid does not have, and why does it make integration the widest layer?</strong></summary>
+
+It adds static analysis (TypeScript, linting) as the base. It makes integration widest because in front-end code many bugs come from components interacting, and React Testing Library makes integration tests almost as cheap as unit tests, so you get more confidence for about the same cost.
+
+</details>
+
+<details markdown="1">
+<summary><strong>Q3. Predict: you replace <code>Input</code> with a mock inside a Modal form test, and the real <code>Input</code> has a bug where it never calls <code>onChange</code>. Does the test catch it?</strong></summary>
+
+No. The mock stands in for the real `Input`, so the bug is never run. This is why integration tests should use real child components.
+
+</details>
+
+<details markdown="1">
+<summary><strong>Q4. Why does the Part 4 accessibility check belong in Cypress rather than only in Jest?</strong></summary>
+
+jsdom does not do real layout, styling or browser focus behaviour. A scan in a real browser, with the whole page assembled, sees what a real user and assistive technology would see. Jest tests can still check roles and labels. The E2E scan is the final check on the assembled page.
+
+</details>
 
 ## Go deeper
 

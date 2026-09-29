@@ -155,14 +155,26 @@ Four props, eight or more tests, and at least two of them are edge cases you wou
 
 ## Check yourself
 
-??? question "Q1. How many test cases does `variant?: 'primary' | 'secondary'` imply, and why?"
-    Three: `'primary'`, `'secondary'` and absent. The absent case checks that the default is applied.
+<details markdown="1">
+<summary><strong>Q1. How many test cases does <code>variant?: 'primary' | 'secondary'</code> imply, and why?</strong></summary>
 
-??? question "Q2. `onDismiss?: () => void`. The component calls `onDismiss()` directly. What happens when a caller leaves it out, and what test catches it?"
-    Under `strict`, `tsc` rejects the direct call (`Cannot invoke an object which is possibly 'undefined'`), so this bug only survives if types are skipped (`babel-jest`) or silenced with `!`. At runtime it throws `TypeError: onDismiss is not a function` at the moment of dismissal. A test that renders a dismissible `Alert` without `onDismiss` and clicks Dismiss catches it. The fix is `onDismiss?.()`.
+Three: `'primary'`, `'secondary'` and absent. The absent case checks that the default is applied.
 
-??? question "Q3. Does TypeScript stop a test from rendering `<Tabs tabs={[]} />`? Should it?"
-    No. `[]` is a valid `Tab[]`. The component must decide what to do with it, and a test should pin that behaviour down.
+</details>
+
+<details markdown="1">
+<summary><strong>Q2. <code>onDismiss?: () =&gt; void</code>. The component calls <code>onDismiss()</code> directly. What happens when a caller leaves it out, and what test catches it?</strong></summary>
+
+Under `strict`, `tsc` rejects the direct call (`Cannot invoke an object which is possibly 'undefined'`), so this bug only survives if types are skipped (`babel-jest`) or silenced with `!`. At runtime it throws `TypeError: onDismiss is not a function` at the moment of dismissal. A test that renders a dismissible `Alert` without `onDismiss` and clicks Dismiss catches it. The fix is `onDismiss?.()`.
+
+</details>
+
+<details markdown="1">
+<summary><strong>Q3. Does TypeScript stop a test from rendering <code>&lt;Tabs tabs={[]} /&gt;</code>? Should it?</strong></summary>
+
+No. `[]` is a valid `Tab[]`. The component must decide what to do with it, and a test should pin that behaviour down.
+
+</details>
 
 ## Go deeper
 

@@ -261,20 +261,40 @@ If the Modal is rendered through a **portal** (React's `createPortal` into `docu
 
 ## Check yourself
 
-??? question "Q1. `screen.getByRole('switch', { name: 'Dark mode' })` fails, but `getByText('Dark mode')` works. What is probably wrong with Toggle, and why does it matter beyond the test?"
-    The element has no `role="switch"` (or is not a native checkbox), or the label is not connected to it as its accessible name. A screen reader would announce it wrongly or not at all, so users cannot tell it is a toggle.
+<details markdown="1">
+<summary><strong>Q1. <code>screen.getByRole('switch', { name: 'Dark mode' })</code> fails, but <code>getByText('Dark mode')</code> works. What is probably wrong with Toggle, and why does it matter beyond the test?</strong></summary>
 
-??? question "Q2. Which ARIA state would you assert for each: Toggle on, Tabs second tab active, Dropdown open?"
-    Toggle: `aria-checked="true"`. Tabs: `aria-selected="true"` on the second tab. Dropdown: `aria-expanded="true"` on the trigger button.
+The element has no `role="switch"` (or is not a native checkbox), or the label is not connected to it as its accessible name. A screen reader would announce it wrongly or not at all, so users cannot tell it is a toggle.
 
-??? question "Q3. Why does the Escape test need a harness component instead of rendering Modal with `isOpen` directly?"
-    Focus must return to the element that opened the Modal, and closing must actually remove it. That needs a real trigger and real state that `onClose` changes. A bare Modal with a mock `onClose` never closes, and has no trigger to return to.
+</details>
 
-??? question "Q4. axe passes on your Tabs, but you suspect keyboard support is broken. What test do you write?"
-    Tab to the active tab, press `{ArrowRight}` with `user.keyboard`, then assert the next tab has focus and `aria-selected="true"`, and the panel shows its content.
+<details markdown="1">
+<summary><strong>Q2. Which ARIA state would you assert for each: Toggle on, Tabs second tab active, Dropdown open?</strong></summary>
 
-??? question "Q5. Why can jest-axe not catch a low-contrast grey text on white?"
-    jsdom does not compute layout or rendered colours, so axe has nothing to measure. Contrast needs a real browser, for example cypress-axe in Chapter 12.
+Toggle: `aria-checked="true"`. Tabs: `aria-selected="true"` on the second tab. Dropdown: `aria-expanded="true"` on the trigger button.
+
+</details>
+
+<details markdown="1">
+<summary><strong>Q3. Why does the Escape test need a harness component instead of rendering Modal with <code>isOpen</code> directly?</strong></summary>
+
+Focus must return to the element that opened the Modal, and closing must actually remove it. That needs a real trigger and real state that `onClose` changes. A bare Modal with a mock `onClose` never closes, and has no trigger to return to.
+
+</details>
+
+<details markdown="1">
+<summary><strong>Q4. axe passes on your Tabs, but you suspect keyboard support is broken. What test do you write?</strong></summary>
+
+Tab to the active tab, press `{ArrowRight}` with `user.keyboard`, then assert the next tab has focus and `aria-selected="true"`, and the panel shows its content.
+
+</details>
+
+<details markdown="1">
+<summary><strong>Q5. Why can jest-axe not catch a low-contrast grey text on white?</strong></summary>
+
+jsdom does not compute layout or rendered colours, so axe has nothing to measure. Contrast needs a real browser, for example cypress-axe in Chapter 12.
+
+</details>
 
 ## Go deeper
 

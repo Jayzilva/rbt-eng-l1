@@ -264,20 +264,40 @@ The module rule sums it up: **mock only at module boundaries**. A **boundary** i
 
 ## Check yourself
 
-??? question "Q1. A test renders `<Button onClick={onClick} disabled>`, clicks it, and asserts `expect(onClick).toHaveBeenCalledTimes(0)`. Is there a clearer matcher?"
-    `expect(onClick).not.toHaveBeenCalled()`. It says the same thing, and the failure message lists the calls that did happen.
+<details markdown="1">
+<summary><strong>Q1. A test renders <code>&lt;Button onClick={onClick} disabled&gt;</code>, clicks it, and asserts <code>expect(onClick).toHaveBeenCalledTimes(0)</code>. Is there a clearer matcher?</strong></summary>
 
-??? question "Q2. You `jest.spyOn(console, 'error')` without `mockImplementation`. Does the error still print?"
-    Yes. A bare spy records calls and passes them through to the real method. Add `.mockImplementation(() => {})` to silence it.
+`expect(onClick).not.toHaveBeenCalled()`. It says the same thing, and the failure message lists the calls that did happen.
 
-??? question "Q3. What is the difference between `jest.clearAllMocks()` and `jest.restoreAllMocks()`?"
-    `clearAllMocks` empties every mock's call log but keeps scripted return values and keeps spies in place. `restoreAllMocks` also removes the scripting and puts the real methods back under every `spyOn`.
+</details>
 
-??? question "Q4. Should the Modal tests mock the Button component used for the close control? Why?"
-    No. Render the real Button. Mocking it would hide bugs in how the two work together (for example, the close button never receiving `onClose`), and those are exactly what the integration tests in Part 4 need to catch.
+<details markdown="1">
+<summary><strong>Q2. You <code>jest.spyOn(console, 'error')</code> without <code>mockImplementation</code>. Does the error still print?</strong></summary>
 
-??? question "Q5. Why is a missing-`onDismiss` test written without any mock at all?"
-    The bug is the component calling a function that isn't there. Passing a mock would supply the function and hide the crash. The test has to leave the prop out.
+Yes. A bare spy records calls and passes them through to the real method. Add `.mockImplementation(() => {})` to silence it.
+
+</details>
+
+<details markdown="1">
+<summary><strong>Q3. What is the difference between <code>jest.clearAllMocks()</code> and <code>jest.restoreAllMocks()</code>?</strong></summary>
+
+`clearAllMocks` empties every mock's call log but keeps scripted return values and keeps spies in place. `restoreAllMocks` also removes the scripting and puts the real methods back under every `spyOn`.
+
+</details>
+
+<details markdown="1">
+<summary><strong>Q4. Should the Modal tests mock the Button component used for the close control? Why?</strong></summary>
+
+No. Render the real Button. Mocking it would hide bugs in how the two work together (for example, the close button never receiving `onClose`), and those are exactly what the integration tests in Part 4 need to catch.
+
+</details>
+
+<details markdown="1">
+<summary><strong>Q5. Why is a missing-<code>onDismiss</code> test written without any mock at all?</strong></summary>
+
+The bug is the component calling a function that isn't there. Passing a mock would supply the function and hide the crash. The test has to leave the prop out.
+
+</details>
 
 ## Go deeper
 

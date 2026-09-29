@@ -244,17 +244,33 @@ Set up Jest for the library and write the first `Button` test from nothing.
 
 ## Check yourself
 
-??? question "Q1. A test contains no `expect` calls and its function finishes normally. Does Jest report it as passed or failed?"
-    Passed. A test fails only when something throws (or a returned promise rejects). That is why a test with no assertion is dangerous: it always passes.
+<details markdown="1">
+<summary><strong>Q1. A test contains no <code>expect</code> calls and its function finishes normally. Does Jest report it as passed or failed?</strong></summary>
 
-??? question "Q2. Predict the output: `expect({ a: 1 }).toBe({ a: 1 })`."
-    It fails. `toBe` checks identity (`Object.is`), and the two literals are different objects. `toEqual` would pass.
+Passed. A test fails only when something throws (or a returned promise rejects). That is why a test with no assertion is dangerous: it always passes.
 
-??? question "Q3. Why does the jest-dom import go in `setupFilesAfterEnv` rather than `setupFiles`?"
-    `setupFiles` runs before the test framework is installed, so `expect` does not exist yet and there is nothing to extend. `setupFilesAfterEnv` runs after Jest's `expect` is available, so jest-dom can add its matchers to it.
+</details>
 
-??? question "Q4. You write `const onClick = jest.fn();` directly inside a `describe` body and use it in two tests. The second test asserts `toHaveBeenCalledTimes(1)` and fails with 2. Why, and how do you fix it?"
-    The same mock is shared, so it still holds the call from the first test. Create the mock inside each test, or reset it in `beforeEach`. Setting `clearMocks: true` in `jest.config.js` also clears mock calls before every test.
+<details markdown="1">
+<summary><strong>Q2. Predict the output: <code>expect({ a: 1 }).toBe({ a: 1 })</code>.</strong></summary>
+
+It fails. `toBe` checks identity (`Object.is`), and the two literals are different objects. `toEqual` would pass.
+
+</details>
+
+<details markdown="1">
+<summary><strong>Q3. Why does the jest-dom import go in <code>setupFilesAfterEnv</code> rather than <code>setupFiles</code>?</strong></summary>
+
+`setupFiles` runs before the test framework is installed, so `expect` does not exist yet and there is nothing to extend. `setupFilesAfterEnv` runs after Jest's `expect` is available, so jest-dom can add its matchers to it.
+
+</details>
+
+<details markdown="1">
+<summary><strong>Q4. You write <code>const onClick = jest.fn();</code> directly inside a <code>describe</code> body and use it in two tests. The second test asserts <code>toHaveBeenCalledTimes(1)</code> and fails with 2. Why, and how do you fix it?</strong></summary>
+
+The same mock is shared, so it still holds the call from the first test. Create the mock inside each test, or reset it in `beforeEach`. Setting `clearMocks: true` in `jest.config.js` also clears mock calls before every test.
+
+</details>
 
 ## Go deeper
 

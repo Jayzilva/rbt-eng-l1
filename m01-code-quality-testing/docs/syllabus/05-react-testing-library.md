@@ -227,20 +227,40 @@ The regex `/email/i` allows for a label like "Email \*" when `required` adds an 
 
 ## Check yourself
 
-??? question "Q1. Tabs renders three tabs. You write `screen.getByRole('tab')`. What happens, and what should you write instead?"
-    It throws, because `getBy` requires exactly one match and there are three. Either name the one you want, `getByRole('tab', { name: 'Billing' })`, or use `getAllByRole('tab')` and assert on the array's length.
+<details markdown="1">
+<summary><strong>Q1. Tabs renders three tabs. You write <code>screen.getByRole('tab')</code>. What happens, and what should you write instead?</strong></summary>
 
-??? question "Q2. You want to prove the Modal is not rendered when `isOpen` is false. Which query family, and why?"
-    `queryByRole('dialog')`, expected `.not.toBeInTheDocument()`. `queryBy` returns `null` instead of throwing, so the assertion can run. `findBy` would wait a full second and then fail.
+It throws, because `getBy` requires exactly one match and there are three. Either name the one you want, `getByRole('tab', { name: 'Billing' })`, or use `getAllByRole('tab')` and assert on the array's length.
 
-??? question "Q3. `getByRole('button', { name: 'Close' })` fails on the Modal, but you can see an × icon button in the printed DOM. What is the likely bug?"
-    The icon button has no accessible name. It contains only a symbol or SVG with no `aria-label`, so a screen reader announces "button" with no name. The fix belongs in the component (`aria-label="Close"`), not in the test.
+</details>
 
-??? question "Q4. Why does RTL recommend `screen` over the queries returned by `render`?"
-    Mainly convenience and consistency: you don't need to keep destructuring `render`'s result, and all tests read the same way. The queries `render` returns are bound to `document.body` by default too, so both find portalled modals. What misses portals is `container.querySelector`, because it only searches the component's own `<div>`.
+<details markdown="1">
+<summary><strong>Q2. You want to prove the Modal is not rendered when <code>isOpen</code> is false. Which query family, and why?</strong></summary>
 
-??? question "Q5. Put these in the recommended order: `getByTestId`, `getByText`, `getByRole`, `getByLabelText`."
-    `getByRole` → `getByLabelText` → `getByText` → `getByTestId`. The order follows how closely each query matches what users and assistive technology actually rely on.
+`queryByRole('dialog')`, expected `.not.toBeInTheDocument()`. `queryBy` returns `null` instead of throwing, so the assertion can run. `findBy` would wait a full second and then fail.
+
+</details>
+
+<details markdown="1">
+<summary><strong>Q3. <code>getByRole('button', { name: 'Close' })</code> fails on the Modal, but you can see an × icon button in the printed DOM. What is the likely bug?</strong></summary>
+
+The icon button has no accessible name. It contains only a symbol or SVG with no `aria-label`, so a screen reader announces "button" with no name. The fix belongs in the component (`aria-label="Close"`), not in the test.
+
+</details>
+
+<details markdown="1">
+<summary><strong>Q4. Why does RTL recommend <code>screen</code> over the queries returned by <code>render</code>?</strong></summary>
+
+Mainly convenience and consistency: you don't need to keep destructuring `render`'s result, and all tests read the same way. The queries `render` returns are bound to `document.body` by default too, so both find portalled modals. What misses portals is `container.querySelector`, because it only searches the component's own `<div>`.
+
+</details>
+
+<details markdown="1">
+<summary><strong>Q5. Put these in the recommended order: <code>getByTestId</code>, <code>getByText</code>, <code>getByRole</code>, <code>getByLabelText</code>.</strong></summary>
+
+`getByRole` → `getByLabelText` → `getByText` → `getByTestId`. The order follows how closely each query matches what users and assistive technology actually rely on.
+
+</details>
 
 ## Go deeper
 
