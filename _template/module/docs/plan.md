@@ -25,9 +25,10 @@ Scheduled **{{DATES}}** · Content week {{WEEK}} · Pass bar {{PASS_BAR}}
 
 ## Checklist
 
-- [ ] Study: `/study` done, notes reviewed
+- [ ] Syllabus: `/syllabus` (level map, chapters on GitHub Pages, NotebookLM learn pack)
+- [ ] Studied: chapters, videos, NotebookLM videos, Check-yourself answered
+- [ ] Design: `/design-session` decisions in `docs/design-notes.md`
 - [ ] Propose: change created from the challenge
-- [ ] Teach: level map + learning plan
 - [ ] Plan: spec, design (my choices), tasks
 - [ ] Build: all waves done
 - [ ] Verify: all targets met

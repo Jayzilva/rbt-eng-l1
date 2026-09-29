@@ -46,10 +46,10 @@ markdown_extensions:
 
 nav:
   - Overview: index.md
+  - Syllabus:
+      - Overview: syllabus/index.md
+  - Resources: resources.md
+  - Design notes: design-notes.md
+  - Study notes: notes.md
   - Write-up: PUBLIC.md
   - Build log: build-log.md
-  - Study notes: notes.md
-  - Resources: resources.md
-  # Syllabus chapters are added here by /study when a syllabus is generated:
-  # - Syllabus:
-  #     - syllabus/index.md

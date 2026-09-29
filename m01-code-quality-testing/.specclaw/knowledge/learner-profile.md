@@ -21,7 +21,7 @@ level silently is how a learner ends up either bored by basics or lost in someth
 | testing-pyramid | a | self | 2026-09-29 |
 | jest | a | self | 2026-09-29 |
 | code-coverage | a | self | 2026-09-29 |
-| react-typescript | c | self | 2026-09-29 |
+| react-typescript | b | self | 2026-09-29 |
 | react-testing-library | a | self | 2026-09-29 |
 | user-event | a | self | 2026-09-29 |
 | jest-mocking | a | self | 2026-09-29 |

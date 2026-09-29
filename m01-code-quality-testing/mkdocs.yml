@@ -46,10 +46,22 @@ markdown_extensions:
 
 nav:
   - Overview: index.md
+  - Syllabus:
+      - Overview: syllabus/index.md
+      - "01 · Testing Pyramid and Testing Trophy": syllabus/01-testing-pyramid.md
+      - "02 · Jest Basics": syllabus/02-jest-basics.md
+      - "03 · Code Coverage": syllabus/03-code-coverage.md
+      - "04 · Typing React Props Under Strict Mode": syllabus/04-typescript-props.md
+      - "05 · React Testing Library": syllabus/05-react-testing-library.md
+      - "06 · user-event": syllabus/06-user-event.md
+      - "07 · Jest mocking": syllabus/07-mocking.md
+      - "08 · Async tests and fake timers": syllabus/08-async-and-fake-timers.md
+      - "09 · Arrange-Act-Assert and Testing Behaviour": syllabus/09-aaa-and-behaviour.md
+      - "10 · Test-Driven Development: Red, Green, Refactor": syllabus/10-tdd.md
+      - "11 · Accessibility for Components": syllabus/11-accessibility.md
+      - "12 · End-to-End Testing with Cypress": syllabus/12-cypress-e2e.md
+  - Resources: resources.md
+  - Design notes: design-notes.md
+  - Study notes: notes.md
   - Write-up: PUBLIC.md
   - Build log: build-log.md
-  - Study notes: notes.md
-  - Resources: resources.md
-  # Syllabus chapters are added here by /study when a syllabus is generated:
-  # - Syllabus:
-  #     - syllabus/index.md

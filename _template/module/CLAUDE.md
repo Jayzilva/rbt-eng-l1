@@ -20,23 +20,25 @@ of this challenge; that would score points and teach nothing. So the split is fi
   that needs it. Specclaw teaching mode enforces this (`teach.enabled: true`).
 - **I must be able to explain every artifact** in the PR without notes. If I can't, it isn't done.
 
-## Workflow (one module = one specclaw change = one PR)
+## Workflow (learn first; one module = one specclaw change = one PR)
 
 | Step | Command | Output |
 |---|---|---|
-| 1. Study | `/study` | level map, optional `docs/syllabus/`, `docs/notes.md` in my own words |
-| 2. Propose | `/specclaw:propose` from `academy/CHALLENGE.md` | `.specclaw/changes/<change>/proposal.md` |
-| 3. Assess | `/specclaw:teach` | level map + `.specclaw/knowledge/learning-plan.md` |
-| 4. Plan | `/specclaw:plan` | spec, design (my choices recorded), tasks |
-| 5. Build | `/specclaw:build` | code + commits, wave by wave |
-| 6. Verify | `/specclaw:verify` | `verify-report.md` against the stated targets |
-| 7. Score | `/self-score` | `docs/self-score.md` from `academy/rubric.md` |
-| 8. Publish prep | `/public-writeup` | `docs/PUBLIC.md` + `docs/deliverables/` |
-| 9. PR | `/specclaw:pr` | PR titled `{{MODULE_ID}} {{MODULE_TITLE}}` |
-| 10. Content | `/notebooklm-pack`, `/site-post` | video pack; `docs/build-log.md` on GitHub Pages |
-| 11. Close | merge, tag `{{TAG}}`, `/specclaw:archive`, `/checkpoint` | tracker updated |
+| 1. Syllabus | `/syllabus` | level map, `docs/syllabus/` (GitHub Pages), NotebookLM learn pack |
+| 2. Study | me: chapters → videos → NotebookLM video → Check yourself | understanding; `/study` for Q&A |
+| 3. Design | `/design-session` | `docs/design-notes.md`: decisions I made, with patterns and reasons |
+| 4. Propose | `/specclaw:propose` from `academy/CHALLENGE.md` | `.specclaw/changes/<change>/proposal.md` |
+| 5. Plan | `/specclaw:plan` | spec, design (my decisions settled), tasks |
+| 6. Build | `/specclaw:build` | code + commits, wave by wave |
+| 7. Verify | `/specclaw:verify` | `verify-report.md` against the stated targets |
+| 8. Score | `/self-score` | `docs/self-score.md` from `academy/rubric.md` |
+| 9. Publish prep | `/public-writeup` | `docs/PUBLIC.md` + `docs/deliverables/` |
+| 10. PR | `/specclaw:pr` | PR titled `{{MODULE_ID}} {{MODULE_TITLE}}` |
+| 11. Content | `/notebooklm-pack recap`, `/site-post` | public video pack; `docs/build-log.md` |
+| 12. Close | merge, tag `{{TAG}}`, `/specclaw:archive`, `/checkpoint` | tracker updated |
 
-Run `/checkpoint` at the end of every working session, not only at the end of the module.
+
+Any time: `/study` for Q&A. Run `/checkpoint` at the end of every working session.
 
 ## Memory
 
@@ -51,7 +53,7 @@ session needs: where I stopped, decisions and why, gotchas, open questions for t
 
 Detailed rules are in `.claude/rules/`. They load automatically. Summary:
 
-- `learning.md` — teach-first protocol, what Claude must not do for me
+- `learning.md` — the learning sequence, discussion-mode design, what Claude must not do
 - `git-workflow.md` — branch, commit and PR conventions for this module
 - `public-content.md` — what may and may not leave this repo (academy content is confidential)
 - `module-stack.md` — stack, targets and conventions specific to this challenge

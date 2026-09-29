@@ -28,8 +28,12 @@ Argument: module key `m01`…`m06` (ask if missing; `modules.json` lists them wi
    own paraphrase (no verbatim academy text):
    - `.claude/rules/module-stack.md`: stack, hard targets, conventions (short).
    - `docs/plan.md`: outcome, targets table, timeboxed parts, rubric map, risks, checklist.
+   - `docs/resources.md`: a first curated list of public docs, articles and videos per concept,
+     every link verified (HTTP 200; YouTube via oEmbed). `/syllabus` builds on it.
 5. Note any missing prerequisite (starter code, environment, access) in `docs/plan.md` Risks and
    `memory/open-questions.md`.
-6. Set the module's status to `Studying` in the track `README.md` tracker (make the module title
+6. Set the module's status to `Ready` in the track `README.md` tracker (make the module title
    a link) and in the module README.
-7. Tell me the next action: open Claude Code in the module folder and run `/study`.
+7. Tell me the next action: open Claude Code in the module folder and run `/syllabus`. The
+   module then follows the learning sequence in `.claude/rules/learning.md`: syllabus → study →
+   `/design-session` → specclaw plan → build, with `/study` for Q&A.

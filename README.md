@@ -8,7 +8,7 @@ self-contained project built spec-first with [specclaw](https://github.com/Jayzi
 
 | ID | Module | Scheduled | Headline target | Status | PR | Video | Site |
 |---|---|---|---|---|---|---|---|
-| ENG-L1-M01 | [Code Quality & Testing](m01-code-quality-testing/) | Wed 30 Sep – Thu 1 Oct 2026 | 80% coverage | Ready | – | – | – |
+| ENG-L1-M01 | [Code Quality & Testing](m01-code-quality-testing/) | Wed 30 Sep – Thu 1 Oct 2026 | 80% coverage | Studying | – | – | – |
 | ENG-L1-M02 | API Development | Mon 5 – Tue 6 Oct 2026 | 15+ endpoints | Not started | – | – | – |
 | ENG-L1-M03 | Database Design | Wed 7 – Thu 8 Oct 2026 | 10+ tables | Not started | – | – | – |
 | ENG-L1-M04 | Frontend Architecture | Mon 12 – Tue 13 Oct 2026 | Lighthouse 90+ | Not started | – | – | – |

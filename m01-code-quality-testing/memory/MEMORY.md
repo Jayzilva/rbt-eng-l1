@@ -5,4 +5,4 @@
 - [gotchas.md](gotchas.md) — environment and tool surprises
 - [open-questions.md](open-questions.md) — shaky concepts, questions for the reviewer
 
-Current status: Ready (scaffolded 2026-09-29). Next action: get starter library, then `/study`.
+Current status: Studying (syllabus ready 2026-09-29). Next action: study syllabus + NotebookLM videos, then `/design-session`.

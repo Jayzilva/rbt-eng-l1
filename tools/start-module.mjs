@@ -77,5 +77,5 @@ if (flag === '--refresh-academy') {
   if (fs.existsSync(dir)) console.log(`${mod.dir} exists; filling in missing files only`);
   copyTree(path.join(repo, '_template', 'module'), dir);
   copyAcademy();
-  console.log(`\nScaffolded ${mod.dir}. Next: cd ${mod.dir} && claude, then /specclaw:init and /study.`);
+  console.log(`\nScaffolded ${mod.dir}. Next: cd ${mod.dir} && claude, run specclaw-init (see /start-module), then /syllabus.`);
 }

@@ -24,7 +24,8 @@ Challenge source files are local-only in `academy/`; see `academy/README.md`.
 
     CLAUDE.md            module instructions (loads memory + rules)
     .claude/rules/       learning, git, public-content, stack rules
-    .claude/skills/      study, self-score, public-writeup, notebooklm-pack, site-post, checkpoint
+    .claude/skills/      syllabus, design-session, study, self-score, public-writeup,
+                         notebooklm-pack, site-post, checkpoint
     memory/              portable project memory
     .specclaw/           spec-driven change: proposal, spec, design, tasks, teaching log
     mkdocs.yml           public site config (GitHub Pages)

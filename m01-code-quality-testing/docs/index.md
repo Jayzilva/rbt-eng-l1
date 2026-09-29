@@ -10,10 +10,12 @@ built spec-first with [specclaw](https://github.com/Jayzilva/specclaw) teaching 
 | Code | [GitHub folder](https://github.com/Jayzilva/rbt-eng-l1/tree/main/m01-code-quality-testing) |
 | Pull request | pending |
 | Video (NotebookLM) | pending |
-| Status | Not started |
+| Status | Studying |
 
 ## Start here
 
+- **[Syllabus](syllabus/index.md)** — what I studied first: chapters, diagrams, videos
+- **[Design notes](design-notes.md)** — the decisions I made and why
 - **[Write-up](PUBLIC.md)** — what I built, the results, what I learned
 - **[Build log](build-log.md)** — the story of the module, week by week
 - **[Study notes](notes.md)** — concepts in my own words
