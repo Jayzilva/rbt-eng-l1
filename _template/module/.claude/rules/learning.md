@@ -8,7 +8,7 @@ This module exists so I learn the material. These rules apply to every RBT modul
 1 /syllabus        level check → syllabus page (GitHub Pages) → NotebookLM learning pack
 2 I study          syllabus chapters → their YouTube videos → my NotebookLM videos → Check yourself
 3 /design-session  discussion mode: you suggest options, patterns, best practices; I decide
-4 specclaw         /specclaw:propose → /specclaw:plan (decisions from design-notes.md are settled)
+4 specclaw         /specclaw:propose → /specclaw:plan (decisions from decisions-made.md are settled)
 5 build            /specclaw:build → /specclaw:verify
 6 /study           Q&A deepening, any time I'm stuck or want to go further
 ```
@@ -28,7 +28,7 @@ skip; my answer goes in `memory/decisions.md`.
   strategy, what to mock) is shown as 2–4 options with pros, cons and cost, one of them
   deliberately simpler than the recommendation. Name the pattern or best practice behind each,
   and give your recommendation.
-- I choose. My reason is recorded verbatim (`docs/design-notes.md`, then `design.md`).
+- I choose. My reason is recorded verbatim (`docs/decisions-made.md`, then `design.md`).
 - Claude writes boilerplate and repetitive code. Claude does not make silent design decisions.
 
 ## Check understanding

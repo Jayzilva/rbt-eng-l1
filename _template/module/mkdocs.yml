@@ -49,7 +49,7 @@ nav:
   - Syllabus:
       - Overview: syllabus/index.md
   - Resources: resources.md
-  - Design notes: design-notes.md
+  - Decisions made: decisions-made.md
   - Study notes: notes.md
   - Write-up: PUBLIC.md
   - Build log: build-log.md

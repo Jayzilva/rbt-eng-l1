@@ -24,9 +24,13 @@ checking understanding, filling gaps, and answering questions that come up mid-b
    checks the fix.
 3. When I ask something, answer Socratically where it helps (a guiding question first), directly
    when I'm stuck or short on time. Cite the chapter or a verified resource.
-4. If the syllabus is wrong or missing something, say so and propose the fix to the chapter.
+4. If my question is about a design decision (`/study D6`, "why did we choose…"), answer from
+   `docs/decisions-made.md` and the syllabus, then append the question and a short answer under
+   that decision's **Clarifications** (date, question, answer, links). If the answer changes the
+   decision, add a **Revised** entry instead of editing the original.
+5. If the syllabus is wrong or missing something, say so and propose the fix to the chapter.
    Verify any new link before adding it.
-5. If I want to, I write `docs/notes.md` in my own words. You review it for factual errors and
+6. If I want to, I write `docs/notes.md` in my own words. You review it for factual errors and
    gaps only, and never write the prose.
 
 ## Record

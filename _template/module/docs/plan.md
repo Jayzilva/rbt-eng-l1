@@ -27,7 +27,7 @@ Scheduled **{{DATES}}** · Content week {{WEEK}} · Pass bar {{PASS_BAR}}
 
 - [ ] Syllabus: `/syllabus` (level map, chapters on GitHub Pages, NotebookLM learn pack)
 - [ ] Studied: chapters, videos, NotebookLM videos, Check-yourself answered
-- [ ] Design: `/design-session` decisions in `docs/design-notes.md`
+- [ ] Design: `/design-session` decisions in `docs/decisions-made.md`
 - [ ] Propose: change created from the challenge
 - [ ] Plan: spec, design (my choices), tasks
 - [ ] Build: all waves done

@@ -26,7 +26,7 @@ of this challenge; that would score points and teach nothing. So the split is fi
 |---|---|---|
 | 1. Syllabus | `/syllabus` | level map, `docs/syllabus/` (GitHub Pages), NotebookLM learn pack |
 | 2. Study | me: chapters → videos → NotebookLM video → Check yourself | understanding; `/study` for Q&A |
-| 3. Design | `/design-session` | `docs/design-notes.md`: decisions I made, with patterns and reasons |
+| 3. Design | `/design-session` | `docs/decisions-made.md`: decisions I made, with patterns and reasons |
 | 4. Propose | `/specclaw:propose` from `academy/CHALLENGE.md` | `.specclaw/changes/<change>/proposal.md` |
 | 5. Plan | `/specclaw:plan` | spec, design (my decisions settled), tasks |
 | 6. Build | `/specclaw:build` | code + commits, wave by wave |
@@ -38,7 +38,8 @@ of this challenge; that would score points and teach nothing. So the split is fi
 | 12. Close | merge, tag `{{TAG}}`, `/specclaw:archive`, `/checkpoint` | tracker updated |
 
 
-Any time: `/study` for Q&A. Run `/checkpoint` at the end of every working session.
+Alongside: offline milestones in `docs/offline-milestones.md`. Decisions with full context:
+`docs/decisions-made.md`. Any time: `/study` for Q&A. Run `/checkpoint` at the end of every working session.
 
 ## Memory
 

@@ -61,7 +61,7 @@ nav:
       - "11 · Accessibility for Components": syllabus/11-accessibility.md
       - "12 · End-to-End Testing with Cypress": syllabus/12-cypress-e2e.md
   - Resources: resources.md
-  - Design notes: design-notes.md
+  - Decisions made: decisions-made.md
   - Study notes: notes.md
   - Write-up: PUBLIC.md
   - Build log: build-log.md

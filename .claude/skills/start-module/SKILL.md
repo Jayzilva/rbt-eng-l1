@@ -28,6 +28,10 @@ Argument: module key `m01`…`m06` (ask if missing; `modules.json` lists them wi
    own paraphrase (no verbatim academy text):
    - `.claude/rules/module-stack.md`: stack, hard targets, conventions (short).
    - `docs/plan.md`: outcome, targets table, timeboxed parts, rubric map, risks, checklist.
+   - `docs/offline-milestones.md`: every item from the SESSION's "Offline Milestones" section,
+     paraphrased, each with why it matters, my plan and evidence location, target date and status
+     (`Not started`). Tie items to the module's work where they overlap (for example a hooks
+     milestone to a quality-gate decision).
    - `docs/resources.md`: a first curated list of public docs, articles and videos per concept,
      every link verified (HTTP 200; YouTube via oEmbed). `/syllabus` builds on it.
 5. Note any missing prerequisite (starter code, environment, access) in `docs/plan.md` Risks and

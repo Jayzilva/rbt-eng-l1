@@ -40,7 +40,7 @@ The mode is the argument (`learn` or `recap`). Ask if it's unclear.
 
 1. `node tools/check-public.mjs docs/PUBLIC.md` must exit 0. Stop if not.
 2. `docs/media/notebooklm/sources.md`: `docs/PUBLIC.md`, the headline metrics from
-   `verify-report.md`, `docs/design-notes.md`, and 3–5 public references.
+   `verify-report.md`, `docs/decisions-made.md`, and 3–5 public references.
 3. `docs/media/notebooklm/video-prompt.md`: 5–8 minutes, for engineers learning
    {{MODULE_TITLE}}. Same source-roles rule: my material leads, references only confirm. Explain the concepts through what was built, use only numbers from the
    sources, don't name internal projects, and end by pointing to the GitHub repo and site.

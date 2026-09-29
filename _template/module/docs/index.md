@@ -15,7 +15,8 @@ built spec-first with [specclaw](https://github.com/Jayzilva/specclaw) teaching 
 ## Start here
 
 - **[Syllabus](syllabus/index.md)** — what I studied first: chapters, diagrams, videos
-- **[Design notes](design-notes.md)** — the decisions I made and why
+- **[Decisions made](decisions-made.md)** — every design decision with full context, to revisit and learn from
+- **[Offline milestones](offline-milestones.md)** — the work beyond the challenge, with evidence
 - **[Write-up](PUBLIC.md)** — what I built, the results, what I learned
 - **[Build log](build-log.md)** — the story of the module, week by week
 - **[Study notes](notes.md)** — concepts in my own words

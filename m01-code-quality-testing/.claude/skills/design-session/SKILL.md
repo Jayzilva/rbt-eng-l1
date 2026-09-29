@@ -41,14 +41,17 @@ exists. You are a senior engineer pairing with me: you suggest, explain and chal
 2. List the decisions this challenge needs (for example: project layout, test file structure,
    what to mock, how bugs are isolated, commit strategy, CI and quality gates, E2E scope). Show
    the list and let me reorder or cut it.
-3. Discuss each decision with the rules above. After each one, record it in
-   `docs/design-notes.md` (public, my words where I gave a reason): decision, options
-   considered, chosen option, reason, pattern or practice, and chapter link. Mirror a one-line
-   entry into `memory/decisions.md`.
-4. Finish with an architecture overview diagram in `docs/design-notes.md` and a list of open
+3. Discuss each decision with the rules above. After each one, record it in `docs/decisions-made.md`
+   as a **full-context entry** I can relearn from later: header line (decided date, affects,
+   reversible), Background, Why it mattered here, Options (table, with the chosen one marked),
+   Chose + reason, What it means for the code (snippet or tree), Pattern + source,
+   `**Clarifications.** *(none yet)*`. Keep the Summary table and the dependency diagram at the
+   top of the file up to date. The file is public, and my reasons are in my words. Mirror a
+   one-line entry into `memory/decisions.md`.
+4. Finish with an architecture overview diagram in `docs/decisions-made.md` and a list of open
    risks.
-5. Add `design-notes.md` to the `mkdocs.yml` nav (after the syllabus) and run
-   `node tools/check-public.mjs docs/design-notes.md`.
+5. Make sure `decisions-made.md` is in the `mkdocs.yml` nav (after the syllabus) and run
+   `node tools/check-public.mjs docs/decisions-made.md`.
 6. Next action: `/specclaw:propose` from `academy/CHALLENGE.md`, then `/specclaw:plan`. Tell
-   specclaw to treat `docs/design-notes.md` as settled decisions, so its teaching gate only
+   specclaw to treat `docs/decisions-made.md` as settled decisions, so its teaching gate only
    raises decisions not already made.
