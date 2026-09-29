@@ -38,5 +38,5 @@ Scheduled **{{DATES}}** · Content week {{WEEK}} · Pass bar {{PASS_BAR}}
 - [ ] Reviewer approved, merged, tagged `{{TAG}}`
 - [ ] specclaw change archived
 - [ ] NotebookLM video checked and uploaded
-- [ ] Substack section drafted
-- [ ] Links cross-wired (README ↔ YouTube ↔ Substack)
+- [ ] Build-log post published on GitHub Pages (`/site-post`)
+- [ ] Links cross-wired (README ↔ YouTube ↔ Pages site)

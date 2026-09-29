@@ -20,6 +20,7 @@ const dir = path.join(repo, mod.dir);
 const vars = {
   TRACK_NAME: track.name,
   TRACK_ID: track.id,
+  TRACK_REPO: track.github.split('/').pop(),
   TRACK_README_REL: '../README.md',
   PARTICIPANT: track.participant,
   PASS_BAR: track.passBar,

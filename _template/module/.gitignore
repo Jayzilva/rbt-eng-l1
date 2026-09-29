@@ -15,3 +15,6 @@ build/
 .specclaw/worktrees/
 .specclaw/**/.lock
 *.log
+
+# MkDocs build output
+site/

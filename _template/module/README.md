@@ -10,7 +10,7 @@ Part of the [{{TRACK_NAME}} track]({{TRACK_README_REL}}). Scheduled {{DATES}}.
 
 ## Links
 
-| GitHub PR | Tag | YouTube | Substack |
+| GitHub PR | Tag | YouTube | Site |
 |---|---|---|---|
 | pending | `{{TAG}}` | pending | pending |
 
@@ -24,13 +24,15 @@ Challenge source files are local-only in `academy/`; see `academy/README.md`.
 
     CLAUDE.md            module instructions (loads memory + rules)
     .claude/rules/       learning, git, public-content, stack rules
-    .claude/skills/      study, self-score, public-writeup, notebooklm-pack, substack-draft, checkpoint
+    .claude/skills/      study, self-score, public-writeup, notebooklm-pack, site-post, checkpoint
     memory/              portable project memory
     .specclaw/           spec-driven change: proposal, spec, design, tasks, teaching log
+    mkdocs.yml           public site config (GitHub Pages)
+    docs/syllabus/       syllabus guide from /study (optional)
     docs/plan.md         module plan and checklist
     docs/notes.md        my study notes
-    docs/PUBLIC.md       public write-up (feeds Substack + NotebookLM)
+    docs/PUBLIC.md       public write-up (feeds the Pages site + NotebookLM)
     docs/deliverables/   named challenge deliverables
-    docs/media/          video pack, YouTube + Substack drafts
+    docs/media/          video pack and YouTube drafts (not published to the site)
     tools/               confidentiality checker
     academy/             challenge source (gitignored)

@@ -24,7 +24,7 @@ of this challenge; that would score points and teach nothing. So the split is fi
 
 | Step | Command | Output |
 |---|---|---|
-| 1. Study | `/study` | `docs/notes.md` in my own words, quiz results in `memory/progress.md` |
+| 1. Study | `/study` | level map, optional `docs/syllabus/`, `docs/notes.md` in my own words |
 | 2. Propose | `/specclaw:propose` from `academy/CHALLENGE.md` | `.specclaw/changes/<change>/proposal.md` |
 | 3. Assess | `/specclaw:teach` | level map + `.specclaw/knowledge/learning-plan.md` |
 | 4. Plan | `/specclaw:plan` | spec, design (my choices recorded), tasks |
@@ -33,7 +33,7 @@ of this challenge; that would score points and teach nothing. So the split is fi
 | 7. Score | `/self-score` | `docs/self-score.md` from `academy/rubric.md` |
 | 8. Publish prep | `/public-writeup` | `docs/PUBLIC.md` + `docs/deliverables/` |
 | 9. PR | `/specclaw:pr` | PR titled `{{MODULE_ID}} {{MODULE_TITLE}}` |
-| 10. Content | `/notebooklm-pack`, `/substack-draft` | `docs/media/` |
+| 10. Content | `/notebooklm-pack`, `/site-post` | video pack; `docs/build-log.md` on GitHub Pages |
 | 11. Close | merge, tag `{{TAG}}`, `/specclaw:archive`, `/checkpoint` | tracker updated |
 
 Run `/checkpoint` at the end of every working session, not only at the end of the module.

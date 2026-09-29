@@ -80,5 +80,5 @@ Day split: **Wed** — `/study` (1.5 h), starter import, propose → teach → p
 - [ ] Reviewer approved, merged, tagged `eng-l1-m01-v1`
 - [ ] specclaw change archived
 - [ ] NotebookLM video checked and uploaded
-- [ ] Substack section drafted
-- [ ] Links cross-wired (README ↔ YouTube ↔ Substack)
+- [ ] Build-log post published on GitHub Pages (`/site-post`)
+- [ ] Links cross-wired (README ↔ YouTube ↔ Pages site)

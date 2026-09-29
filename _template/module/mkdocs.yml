@@ -1,0 +1,55 @@
+# Public site for {{MODULE_ID}}. Preview: pip install mkdocs-material && mkdocs serve
+# Published by the track repo's Pages workflow at <track site>/{{MODULE_DIR}}/
+site_name: "{{MODULE_ID}} — {{MODULE_TITLE}}"
+site_description: "{{MODULE_SUMMARY}}"
+repo_url: "https://github.com/Jayzilva/{{TRACK_REPO}}"
+edit_uri: "edit/main/{{MODULE_DIR}}/docs/"
+docs_dir: docs
+
+# Only public material is published. Planning and scoring files paraphrase academy sources.
+exclude_docs: |
+  plan.md
+  self-score.md
+  deliverables/
+  media/
+
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - navigation.footer
+    - content.code.copy
+    - search.suggest
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle: { icon: material/weather-night, name: Dark mode }
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle: { icon: material/weather-sunny, name: Light mode }
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc: { permalink: true }
+  - pymdownx.details
+  - pymdownx.highlight: { anchor_linenums: true }
+  - pymdownx.inlinehilite
+  - pymdownx.tasklist: { custom_checkbox: true }
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+nav:
+  - Overview: index.md
+  - Write-up: PUBLIC.md
+  - Build log: build-log.md
+  - Study notes: notes.md
+  - Resources: resources.md
+  # Syllabus chapters are added here by /study when a syllabus is generated:
+  # - Syllabus:
+  #     - syllabus/index.md

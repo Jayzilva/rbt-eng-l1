@@ -1,11 +1,11 @@
 ---
 name: public-writeup
-description: Prepare docs/PUBLIC.md (my own-words summary for Substack, YouTube and the portfolio) and the named deliverables, then run the confidentiality check. Use after self-score, or when I say "write up the module" or "prepare the public version".
+description: Prepare docs/PUBLIC.md (my own-words summary for the GitHub Pages site, YouTube and the portfolio) and the named deliverables, then run the confidentiality check. Use after self-score, or when I say "write up the module" or "prepare the public version".
 ---
 
 # Public write-up
 
-`docs/PUBLIC.md` is the only file that feeds Substack and NotebookLM. It must be in my words and
+`docs/PUBLIC.md` is the main source for the Pages site and NotebookLM. It must be in my words and
 must not leak academy content. Follow `.claude/rules/public-content.md`.
 
 ## 1. Deliverables
@@ -35,4 +35,4 @@ academy URLs or passwords. Exit code 0 means clean.
 ## 4. Links
 
 Update the "Links" table in `README.md` (module) with the PR URL once it exists. YouTube and
-Substack cells stay `pending` until published.
+Site cells stay `pending` until published.

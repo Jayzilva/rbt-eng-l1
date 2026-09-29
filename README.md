@@ -6,7 +6,7 @@ self-contained project built spec-first with [specclaw](https://github.com/Jayzi
 
 ## Modules
 
-| ID | Module | Scheduled | Headline target | Status | PR | Video | Post |
+| ID | Module | Scheduled | Headline target | Status | PR | Video | Site |
 |---|---|---|---|---|---|---|---|
 | ENG-L1-M01 | [Code Quality & Testing](m01-code-quality-testing/) | Wed 30 Sep – Thu 1 Oct 2026 | 80% coverage | Ready | – | – | – |
 | ENG-L1-M02 | API Development | Mon 5 – Tue 6 Oct 2026 | 15+ endpoints | Not started | – | – | – |
@@ -31,13 +31,17 @@ Verifying, In review, Approved. A title becomes a link when its folder is create
 
 ## Connected content
 
-Every module links three ways: this repo ↔ a NotebookLM video on YouTube ↔ the weekly Substack
-build log. Links live in the table above and in each module's README.
+**Site: <https://jayzilva.github.io/rbt-eng-l1/>**, published from `main` by `.github/workflows/pages.yml`.
+
+Every module links three ways: code and PR here ↔ its page on the site (write-up, build log,
+study notes, syllabus guide) ↔ a NotebookLM video on YouTube. Links live in the table above and
+in each module's README.
 
 ## Publishing
 
 Academy material is confidential and never committed (`.academy/` and `*/academy/` are
-gitignored). Only each module's `docs/PUBLIC.md` feeds public content.
+gitignored). Only what each module's `mkdocs.yml` publishes (write-up, build log, notes, resources, syllabus)
+is public; the Pages workflow runs the confidentiality check before every build.
 
 - [ ] Written OK from the academy owner to publish build logs and videos (date, who):
 
@@ -48,3 +52,9 @@ gitignored). Only each module's `docs/PUBLIC.md` feeds public content.
 
 Requires Node 18+. Pandoc is optional (better Markdown). Claude Code picks up the specclaw
 plugin from each module's `.claude/settings.json`.
+
+Preview the site locally:
+
+    pip install mkdocs-material
+    node tools/build-site.mjs              # whole track into site/
+    cd m01-* && python -m mkdocs serve     # one module, live reload

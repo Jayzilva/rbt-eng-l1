@@ -22,3 +22,6 @@ build/
 
 # specclaw: bf-* collector handoff files. Regenerated every run.
 .specclaw/analysis/.collect/
+
+# MkDocs build output
+site/

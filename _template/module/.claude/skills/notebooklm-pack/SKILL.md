@@ -16,8 +16,8 @@ Output goes to `docs/media/notebooklm/`. Only public material goes in; never `ac
    Must say: explain concepts through what was built here; use only the numbers in the sources;
    do not name BISTEC internal projects; end by pointing to the GitHub repo.
 4. Write `docs/media/youtube.md`: title (≤ 70 chars, starts with `{{MODULE_ID}}`), description
-   with links to the GitHub module folder, the PR, and the Substack post (placeholder until
-   published), chapters placeholder, tags.
+   with links to the GitHub module folder, the PR, and the module's GitHub Pages site
+   (`https://jayzilva.github.io/<track repo>/<module dir>/`), chapters placeholder, tags.
 5. Write `docs/media/review-checklist.md` for me to tick after watching the generated video:
    numbers match sources, no confidential content, no wrong claims, audio names correct. Any
    failure means regenerate or cut; never upload unchecked.
