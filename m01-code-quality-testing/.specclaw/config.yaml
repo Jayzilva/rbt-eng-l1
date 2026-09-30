@@ -210,7 +210,7 @@ loop:
   max_iterations: 5        # local inner loop cap
   no_progress_limit: 2     # consecutive identical/empty turns → halt
   guard_action: "revert-tests"   # reward-hack guard: revert-tests | revert-turn
-  test_paths: []           # globs identifying test files (reward-hack guard)
+  test_paths: ["component-library/src/**/*.test.tsx", "component-library/tests/**", "component-library/cypress/**"]           # globs identifying test files (reward-hack guard)
   ci_gate: false           # opt-in outer CI loop (GitHub Actions / Azure Pipelines)
   ci_max_iterations: 3     # CI outer loop cap
   ci_timeout_seconds: 1200 # per-cycle CI wall-clock before halt

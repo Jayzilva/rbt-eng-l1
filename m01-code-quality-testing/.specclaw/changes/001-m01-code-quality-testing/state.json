@@ -1,9 +1,12 @@
 {
   "change": "001-m01-code-quality-testing",
-  "phase": "proposal",
+  "phase": "tasks",
   "branch": "",
   "size": "architectural",
   "phases": {
-    "proposal": {"status":"approved","at":"2026-09-30T04:11:25Z"}
+    "proposal": {"status":"approved","at":"2026-09-30T04:11:25Z"},
+    "spec": {"status":"done","at":"2026-09-30T04:31:52Z"},
+    "design": {"status":"done","at":"2026-09-30T04:31:57Z"},
+    "tasks": {"status":"done","at":"2026-09-30T04:32:01Z"}
   }
 }
