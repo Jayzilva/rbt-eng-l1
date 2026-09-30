@@ -1,15 +1,16 @@
 # 🦞 SpecClaw Dashboard
 
-**Project:** ENG-L1-M01 Code Quality & Testing
-**Last Updated:** 2026-09-29 11:56 UTC
+**Project:** ENG-L1-M01 Code Quality and Testing
+**Last Updated:** 2026-09-30 04:11 UTC
 
 ## Active Changes
 
-_No active changes yet. Run `specclaw propose "<idea>"` to start._
+_No active changes._
 
 ## Pending Proposals
 
-_None._
+
+- 📋 **001-m01-code-quality-testing** ▣ — proposal ready, awaiting planning
 
 ## Recently Completed
 
