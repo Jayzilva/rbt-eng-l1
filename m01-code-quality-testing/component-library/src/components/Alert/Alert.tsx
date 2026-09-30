@@ -11,7 +11,13 @@ export interface AlertProps {
   autoDismissMs?: number;
 }
 
-export function Alert({ variant, children, dismissible = false, onDismiss, autoDismissMs }: AlertProps) {
+export function Alert({
+  variant,
+  children,
+  dismissible = false,
+  onDismiss,
+  autoDismissMs,
+}: AlertProps) {
   const [visible, setVisible] = useState(true);
   const onDismissRef = useRef(onDismiss);
 
@@ -39,7 +45,12 @@ export function Alert({ variant, children, dismissible = false, onDismiss, autoD
     <div role="alert" className={`alert alert--${variant}`}>
       <div className="alert__message">{children}</div>
       {dismissible && (
-        <button type="button" className="alert__dismiss" aria-label="Dismiss" onClick={handleDismiss}>
+        <button
+          type="button"
+          className="alert__dismiss"
+          aria-label="Dismiss"
+          onClick={handleDismiss}
+        >
           <span aria-hidden="true">×</span>
         </button>
       )}

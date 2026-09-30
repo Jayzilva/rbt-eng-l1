@@ -14,7 +14,13 @@ export interface DropdownProps {
   placeholder?: string;
 }
 
-export function Dropdown({ label, options, value, onChange, placeholder = 'Select…' }: DropdownProps) {
+export function Dropdown({
+  label,
+  options,
+  value,
+  onChange,
+  placeholder = 'Select…',
+}: DropdownProps) {
   const baseId = useId();
   const labelId = `${baseId}-label`;
   const valueId = `${baseId}-value`;
