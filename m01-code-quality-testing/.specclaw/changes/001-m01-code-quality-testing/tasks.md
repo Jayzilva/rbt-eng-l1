@@ -51,7 +51,7 @@ paths are relative to `m01-code-quality-testing/` unless absolute.
     `cd .. && husky component-library/.husky` or the equivalent for a monorepo subfolder. Verify
     that the repo root is used and document it. Evidence: `npm run lint` output, plus a dry run
     of each hook.
-- [ ] `T4` — Vite and Cypress installed and configured
+- [x] `T4` — Vite and Cypress installed and configured
   - Files: component-library/vite.config.ts, cypress.config.ts, cypress/support/e2e.ts, cypress/tsconfig.json, package.json (dev, build, cy:open, e2e scripts)
   - Estimate: medium
   - Kind: config

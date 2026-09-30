@@ -3,3 +3,6 @@ coverage/
 dist/
 .jest-*.json
 *.log
+cypress/videos/
+cypress/screenshots/
+cypress/downloads/
