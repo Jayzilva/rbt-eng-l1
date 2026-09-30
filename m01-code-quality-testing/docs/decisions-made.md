@@ -33,6 +33,7 @@ How to use this file:
 | [P3](#p3-cypress-browser) | Cypress browser | Bundled Electron, headless; `cypress open` while writing | Part 4 | trivial |
 | [P4](#p4-roles-for-found-bugs) | Who triages and fixes bugs | Agents park failing tests; **I** triage and diagnose; agent writes the green fix | Parts 2–3 | easy per bug |
 | [B1](#b1-git-hook-scope) | Git hook scope in a multi-module repo | Path-guarded hooks: run only when M01 files are involved | every commit/push | easy |
+| [B2](#b2-review-cadence-for-unit-tests) | Review cadence for the 8 test files | Button first, then two reviewed batches (simple, then complex) | Part 2 | easy |
 
 ```mermaid
 flowchart LR
@@ -375,6 +376,11 @@ one command: npm run verify (the same checks, run by hand)
 
 **Pattern.** Shift-left testing with tiered gates by cost.
 
+**Revised 2026-09-30.** The pre-push coverage gate (`test:cov`) **blocks pushes to `main`**
+and is **advisory on feature branches**: it warns but doesn't block. Typecheck and lint block
+every push. Reason: the feature branch is deliberately red during Parts 2–3 (D7), and a hard gate
+would stop backups to GitHub or train the `--no-verify` habit. Approved by me.
+
 **Relation to the offline milestone** "set up pre-commit hooks for test running": tests run in
 the **pre-push** hook, not pre-commit, because of D7. The milestone evidence explains that
 trade-off (see [offline-milestones.md](offline-milestones.md)).
@@ -492,5 +498,25 @@ modules add their own guarded block.
 
 **Pattern.** Scope side effects to their owner: a shared resource used without affecting other
 users.
+
+**Clarifications.** *(none yet)*
+
+---
+
+## B2 · Review cadence for unit tests
+
+**Decided** 2026-09-30 (build, wave 3) · **Affects** Part 2 · **Reversible** easy
+
+**Background.** The first test file (Button) sets the pattern for the other seven, which agents
+can write in parallel. One review at the end is long and easy to skim. Reviewing every file
+makes me the bottleneck.
+
+**Options.** **A: two batches** ✔. B: all seven, then one review. C: one at a time.
+
+**Chose A.** Button is reviewed closely first. Then batch 1 (Input, Card, Toggle; simple) gets a
+short review. Then batch 2 (Modal, Dropdown, Alert, Tabs; complex, where bugs and keyboard rules
+concentrate) gets a short review. Found bugs are listed at each review.
+
+**Pattern.** Review early to set the standard, then at batch boundaries.
 
 **Clarifications.** *(none yet)*

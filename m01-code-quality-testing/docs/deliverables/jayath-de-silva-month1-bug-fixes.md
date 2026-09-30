@@ -10,6 +10,7 @@ Recorded by the unit-test tasks when a correct test failed. The component was no
 
 | # | Component | Test (full name) | Failing assertion | Observed symptom | Red commit |
 |---|---|---|---|---|---|
+| F1 | Button | Button › edge cases › does not call onClick while loading | `expect(onClick).not.toHaveBeenCalled()`: received 1 call | Clicking a button in its loading state still fires `onClick` | T6 |
 
 ## Fixes (Part 3)
 

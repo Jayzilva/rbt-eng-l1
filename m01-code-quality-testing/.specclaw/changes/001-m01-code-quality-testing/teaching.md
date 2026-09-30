@@ -36,3 +36,11 @@ W2: ts-jest (translator at the door, type errors fail tests), jest-dom (DOM voca
 ### 2026-09-30T04:39:46Z — decision
 
 W2 hooks scope: A path-guarded — hooks exit unless the commit/push touches m01-code-quality-testing/component-library/ (git hooks are repo-wide in rbt-eng-l1).
+
+### 2026-09-30T17:19:09Z — brief
+
+W3: RTL queries (accessibility tree; getBy/queryBy/findBy; role > label > text > testid), user-event (simulated user, always await), jest.fn (recording stand-in; interaction vs state checks, Harness), jest-axe (HTML linter, scan states; no keyboard/contrast).
+
+### 2026-09-30T17:19:09Z — decision
+
+W3 review: two batches (Input/Card/Toggle, then Modal/Dropdown/Alert/Tabs) after Button review. Pre-push: coverage gate blocks main only; feature branch advisory (approved).

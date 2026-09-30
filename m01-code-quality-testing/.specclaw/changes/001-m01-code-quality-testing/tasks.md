@@ -83,7 +83,7 @@ tests are exactly the ones listed in the Found rows, for example
 `npx jest <Name> --json --outputFile=.jest-<Name>.json; node scripts/expect-failures.mjs .jest-<Name>.json "<test name>"`.
 T5 creates `scripts/expect-failures.mjs`.
 
-- [ ] `T6` — Button tests
+- [x] `T6` — Button tests
   - Files: component-library/src/components/Button/Button.test.tsx, docs/deliverables/jayath-de-silva-month1-bug-fixes.md
   - Estimate: small
   - Kind: test
