@@ -2,7 +2,32 @@
 
 Part of the [Engineer track](../README.md). Scheduled Wed 30 Sep – Thu 1 Oct 2026.
 
-**Status:** Studying — syllabus ready 29 Sep
+**Status:** Studying + design done — build starts after `/specclaw:propose`
+
+## Start learning here
+
+Follow these in order. Everything renders directly on GitHub.
+
+1. **[Syllabus overview](docs/syllabus/README.md)**: scope, level map, reading order, time per chapter.
+2. **Part 1 (foundations):** read these, watch each chapter's *Go deeper* videos, then generate NotebookLM video 1.
+   [01 Testing pyramid](docs/syllabus/01-testing-pyramid.md) ·
+   [02 Jest basics](docs/syllabus/02-jest-basics.md) ·
+   [03 Code coverage](docs/syllabus/03-code-coverage.md) ·
+   [04 Typing props](docs/syllabus/04-typescript-props.md) ·
+   [05 React Testing Library](docs/syllabus/05-react-testing-library.md) ·
+   [06 user-event](docs/syllabus/06-user-event.md)
+3. **Part 2 (writing good tests):** read these, then generate NotebookLM video 2.
+   [07 Mocking](docs/syllabus/07-mocking.md) ·
+   [08 Async and fake timers](docs/syllabus/08-async-and-fake-timers.md) ·
+   [09 AAA and behaviour](docs/syllabus/09-aaa-and-behaviour.md) ·
+   [10 TDD](docs/syllabus/10-tdd.md) ·
+   [11 Accessibility](docs/syllabus/11-accessibility.md) ·
+   [12 Cypress E2E](docs/syllabus/12-cypress-e2e.md)
+4. **[NotebookLM learning pack](docs/media/notebooklm/learn-pack.md)**: sources to paste and both video prompts.
+5. **[Decisions made](docs/decisions-made.md)**: the 10 design decisions with full reasoning. Reread before each part.
+6. **[Offline milestones](docs/offline-milestones.md)**: the work beyond the challenge, due 1 Nov.
+7. Answer each chapter's *Check yourself* questions before opening the answers. For deeper Q&A, open
+   Claude Code in this folder and run `/study <chapter>`.
 
 ## What this module covers
 
