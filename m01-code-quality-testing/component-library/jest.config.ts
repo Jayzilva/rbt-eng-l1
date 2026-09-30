@@ -5,7 +5,10 @@ const config: Config = {
   testEnvironment: 'jsdom',
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
   transform: {
-    '^.+\\.tsx?$': ['ts-jest', { tsconfig: { jsx: 'react-jsx', module: 'commonjs', moduleResolution: 'node' } }],
+    '^.+\\.tsx?$': [
+      'ts-jest',
+      { tsconfig: { jsx: 'react-jsx', module: 'commonjs', moduleResolution: 'node' } },
+    ],
   },
   moduleNameMapper: {
     '\\.(css)$': 'identity-obj-proxy',
@@ -15,7 +18,11 @@ const config: Config = {
   testPathIgnorePatterns: ['/node_modules/', '<rootDir>/cypress/'],
 
   // D6: measure every component (tested or not), excluding barrel re-exports.
-  collectCoverageFrom: ['src/components/**/*.{ts,tsx}', '!src/**/index.ts', '!src/**/*.test.{ts,tsx}'],
+  collectCoverageFrom: [
+    'src/components/**/*.{ts,tsx}',
+    '!src/**/index.ts',
+    '!src/**/*.test.{ts,tsx}',
+  ],
   coverageReporters: ['text', 'html', 'lcov', 'json-summary'],
   coverageThreshold: {
     global: { statements: 80, branches: 80, functions: 80, lines: 80 },

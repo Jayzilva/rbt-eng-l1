@@ -1,0 +1,5 @@
+# M01 pre-commit (D10, B1): fast checks on staged files only; never runs tests (D7 red commits).
+# Git hooks are repo-wide in rbt-eng-l1, so exit unless this commit touches the M01 library.
+MOD=m01-code-quality-testing/component-library
+git diff --cached --name-only | grep -q "^$MOD/" || exit 0
+cd "$MOD" && npx lint-staged

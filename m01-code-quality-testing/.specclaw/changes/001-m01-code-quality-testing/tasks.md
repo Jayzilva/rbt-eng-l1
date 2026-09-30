@@ -40,7 +40,7 @@ paths are relative to `m01-code-quality-testing/` unless absolute.
     `collectCoverageFrom` in jest.config.ts. Scripts: test, test:cov, typecheck, verify
     (placeholder until W5/W6). Evidence: `npm test -- --passWithNoTests` and `npm run typecheck`
     output. The gitignore covers coverage/, node_modules/ and the deliverables zip.
-- [ ] `T3` — ESLint, Prettier, Husky and lint-staged
+- [x] `T3` — ESLint, Prettier, Husky and lint-staged
   - Files: component-library/eslint.config.js, .prettierrc, .lintstagedrc.json, .husky/pre-commit, .husky/pre-push, package.json (scripts, prepare)
   - Estimate: medium
   - Kind: config

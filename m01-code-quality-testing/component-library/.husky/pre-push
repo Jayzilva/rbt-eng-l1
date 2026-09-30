@@ -1,0 +1,22 @@
+# M01 pre-push (D10, B1): typecheck + lint, and the full coverage gate when pushing to main.
+# Feature branches may carry deliberate red commits (D7), so the coverage gate there is advisory.
+MOD=m01-code-quality-testing/component-library
+touched=0; to_main=0
+while read -r local_ref local_sha remote_ref remote_sha; do
+  [ "$local_sha" = "0000000000000000000000000000000000000000" ] && continue
+  case "$remote_ref" in refs/heads/main) to_main=1 ;; esac
+  if [ "$remote_sha" = "0000000000000000000000000000000000000000" ]; then
+    range="$(git merge-base origin/main "$local_sha" 2>/dev/null || echo "$local_sha~1")..$local_sha"
+  else
+    range="$remote_sha..$local_sha"
+  fi
+  git diff --name-only "$range" | grep -q "^$MOD/" && touched=1
+done
+[ "$touched" = 1 ] || exit 0
+cd "$MOD" || exit 1
+npm run -s typecheck && npm run -s lint || exit 1
+if [ "$to_main" = 1 ]; then
+  npm run -s test:cov
+else
+  npm run -s test:cov || echo "pre-push: coverage/tests not green on this feature branch (allowed: D7 red commits). Required before merging to main."
+fi

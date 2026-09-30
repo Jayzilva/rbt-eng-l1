@@ -1,0 +1,4 @@
+# Keep LF in the working tree so Prettier (endOfLine: lf) agrees on every OS.
+* text=auto eol=lf
+*.png binary
+*.zip binary
