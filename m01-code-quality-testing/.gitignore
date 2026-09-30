@@ -25,3 +25,6 @@ build/
 
 # MkDocs build output
 site/
+
+# Generated deliverable (P2): built by npm run deliverables, attached to the PR
+docs/deliverables/*-test-suite.zip

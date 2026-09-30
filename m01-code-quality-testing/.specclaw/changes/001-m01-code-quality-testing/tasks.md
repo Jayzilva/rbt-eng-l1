@@ -30,7 +30,7 @@ paths are relative to `m01-code-quality-testing/` unless absolute.
 
 ### Wave 2 — Tooling, gates and helpers (Part 1)
 
-- [ ] `T2` — package.json, TypeScript and Jest with ts-jest and the coverage gate
+- [x] `T2` — package.json, TypeScript and Jest with ts-jest and the coverage gate
   - Files: component-library/package.json, package-lock.json, tsconfig.json, jest.config.ts, jest.setup.ts, .gitignore
   - Estimate: medium
   - Kind: config

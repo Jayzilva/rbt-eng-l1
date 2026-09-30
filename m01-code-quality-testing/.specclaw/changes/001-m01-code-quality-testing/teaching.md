@@ -28,3 +28,11 @@ P3 Cypress: bundled Electron headless; cypress open while writing.
 ### 2026-09-30T04:32:04Z — decision
 
 P4 roles: agents stop at failing tests and label the commit red; learner triages + diagnoses + picks fix; agent writes minimal green commit.
+
+### 2026-09-30T04:39:46Z — brief
+
+W2: ts-jest (translator at the door, type errors fail tests), jest-dom (DOM vocabulary matchers, setupFilesAfterEnv), ESLint testing plugins (spell-check for test smells; eslint-config-prettier), Husky + lint-staged (repo hook points, staged-only lint).
+
+### 2026-09-30T04:39:46Z — decision
+
+W2 hooks scope: A path-guarded — hooks exit unless the commit/push touches m01-code-quality-testing/component-library/ (git hooks are repo-wide in rbt-eng-l1).
