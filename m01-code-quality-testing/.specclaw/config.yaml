@@ -58,12 +58,12 @@ context:
 
 # Build settings
 build:
-  test_command: "npm test -- --coverage"                 # Fast tier: unit/integration. e.g., "npm test", "pytest"
-  e2e_command: "npx cypress run"                  # Slow tier: browser/e2e. e.g., "npx playwright test"
+  test_command: "npm --prefix component-library run test:cov"                 # Fast tier: unit/integration. e.g., "npm test", "pytest"
+  e2e_command: "npm --prefix component-library run e2e"                  # Slow tier: browser/e2e. e.g., "npx playwright test"
                                    # Run separately from test_command, per verify.e2e below.
                                    # Absent or empty → no e2e tier, behaviour unchanged.
-  lint_command: "npm run lint"                 # e.g., "npm run lint"
-  build_command: "npm run build"                # e.g., "npm run build"
+  lint_command: "npm --prefix component-library run lint"                 # e.g., "npm run lint"
+  build_command: "npm --prefix component-library run build"                # e.g., "npm run build"
   parallel_tasks: 3               # Max concurrent agent spawns
   timeout_seconds: 300             # Per-task timeout
 

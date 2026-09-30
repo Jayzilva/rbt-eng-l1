@@ -21,7 +21,7 @@ paths are relative to `m01-code-quality-testing/` unless absolute.
 
 ### Wave 1 — Baseline (Part 0)
 
-- [ ] `T1` — Commit the generated starter library as the baseline
+- [x] `T1` — Commit the generated starter library as the baseline
   - Files: component-library/src/**, component-library/README.md
   - Estimate: small
   - Kind: config
@@ -62,11 +62,11 @@ paths are relative to `m01-code-quality-testing/` unless absolute.
     `start-server-and-test dev http://localhost:5173 cy:run`. Evidence: `npx cypress verify`
     output (proves the binary works on this machine).
 - [ ] `T5` — Shared test helper and bug-fixes deliverable skeleton
-  - Files: component-library/tests/utils.tsx, docs/deliverables/jayath-de-silva-month1-bug-fixes.md
+  - Files: component-library/tests/utils.tsx, component-library/scripts/expect-failures.mjs, docs/deliverables/jayath-de-silva-month1-bug-fixes.md
   - Estimate: small
   - Kind: test
   - Depends: T2
-  - Notes: `renderWithUser(ui)` returns the render result plus `user` (D4). The bug doc has a
+  - Notes: `expect-failures.mjs <jest-json> <name>...` exits 0 only if the failing test names equal the given list (used as red-state evidence). `renderWithUser(ui)` returns the render result plus `user` (D4). The bug doc has a
     "Found" table (component, test name, failing assertion, symptom) and 5 empty sections:
     location, symptom, root cause (learner's words), test, fix.
 
@@ -77,6 +77,11 @@ interactions / edge cases; ≥ 5 behaviour tests; keyboard + ARIA-state tests pe
 where interactive; `jest-axe` on key states. **If a correct test fails: stop, do not fix the
 component, keep the test, label the commit `(red: <behaviour>)`, add a "Found" row (FR9).**
 Evidence: `npx jest <Name> --coverage --collectCoverageFrom=src/components/<Name>/**` output.
+**Red-state evidence:** the build's verification command must exit 0. When a task ends with parked
+failing tests, verify with a command that runs the file's tests and exits 0 only if the failing
+tests are exactly the ones listed in the Found rows, for example
+`npx jest <Name> --json --outputFile=.jest-<Name>.json; node scripts/expect-failures.mjs .jest-<Name>.json "<test name>"`.
+T5 creates `scripts/expect-failures.mjs`.
 
 - [ ] `T6` — Button tests
   - Files: component-library/src/components/Button/Button.test.tsx, docs/deliverables/jayath-de-silva-month1-bug-fixes.md
