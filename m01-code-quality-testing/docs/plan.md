@@ -70,8 +70,8 @@ Day split: **Wed** — `/study` (1.5 h), starter import, propose → teach → p
 - [x] Syllabus: `/syllabus` (level map, chapters on GitHub Pages, NotebookLM learn pack)
 - [ ] Studied: chapters, videos, NotebookLM videos, Check-yourself answered
 - [x] Design: `/design-session` decisions in `docs/decisions-made.md`
-- [ ] Propose: change created from the challenge
-- [ ] Plan: spec, design (my choices), tasks
+- [x] Propose: change created from the challenge
+- [x] Plan: spec, design (my choices), tasks
 - [ ] Build: all waves done
 - [ ] Verify: all targets met
 - [ ] Self-score ≥ 70

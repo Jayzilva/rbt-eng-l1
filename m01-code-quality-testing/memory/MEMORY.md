@@ -5,4 +5,4 @@
 - [gotchas.md](gotchas.md) — environment and tool surprises
 - [open-questions.md](open-questions.md) — shaky concepts, questions for the reviewer
 
-Current status: Studying (syllabus ready 2026-09-29). Next action: study syllabus + NotebookLM videos, then `/design-session`.
+Current status: Building — W1–W2 done (tooling + gates). Next: wave 3 unit tests (T6 Button first, then review).
