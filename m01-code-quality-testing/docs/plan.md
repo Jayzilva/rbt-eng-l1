@@ -66,10 +66,10 @@ Day split: **Wed** — `/study` (1.5 h), starter import, propose → teach → p
 
 ## Checklist
 
-- [ ] Starter library in place (facilitator repo or sealed-bug fallback)
-- [ ] Syllabus: `/syllabus` (level map, chapters on GitHub Pages, NotebookLM learn pack)
+- [x] Starter library in place (sealed-bug fallback, D1; not yet committed)
+- [x] Syllabus: `/syllabus` (level map, chapters on GitHub Pages, NotebookLM learn pack)
 - [ ] Studied: chapters, videos, NotebookLM videos, Check-yourself answered
-- [ ] Design: `/design-session` decisions in `docs/decisions-made.md`
+- [x] Design: `/design-session` decisions in `docs/decisions-made.md`
 - [ ] Propose: change created from the challenge
 - [ ] Plan: spec, design (my choices), tasks
 - [ ] Build: all waves done
