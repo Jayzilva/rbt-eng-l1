@@ -25,6 +25,10 @@ export default tseslint.config(
     },
   },
   {
+    files: ['**/*.{js,mjs,cjs}'],
+    languageOptions: { globals: { ...globals.node } },
+  },
+  {
     files: ['src/**/*.test.{ts,tsx}', 'tests/**/*.{ts,tsx}'],
     ...testingLibrary.configs['flat/react'],
     languageOptions: { globals: { ...globals.jest } },

@@ -61,7 +61,7 @@ paths are relative to `m01-code-quality-testing/` unless absolute.
     @testing-library/cypress registered in support. The `e2e` script uses
     `start-server-and-test dev http://localhost:5173 cy:run`. Evidence: `npx cypress verify`
     output (proves the binary works on this machine).
-- [ ] `T5` — Shared test helper and bug-fixes deliverable skeleton
+- [x] `T5` — Shared test helper and bug-fixes deliverable skeleton
   - Files: component-library/tests/utils.tsx, component-library/scripts/expect-failures.mjs, docs/deliverables/jayath-de-silva-month1-bug-fixes.md
   - Estimate: small
   - Kind: test
